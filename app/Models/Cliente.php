@@ -9,6 +9,8 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $table = 'clientes';
+
     protected $fillable = [
         'nombres',
         'apellidos',
@@ -18,6 +20,12 @@ class Cliente extends Model
         'fecha_nacimiento',
         'estado'
     ];
+
+    protected $casts = [
+        'estado' => 'boolean',
+    ];
+
+
 
 
 }

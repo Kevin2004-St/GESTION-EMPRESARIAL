@@ -25,11 +25,17 @@ class ClienteController extends Controller
     //Funcion para el registro de un cliente
     public function store(ClienteRequest $request){
 
-        Cliente::created($request->validate());
+        $validateData = $request->validated();
 
-        return redirect()->route('clientes.index')->with('success', 'Registro realizado exitosamente');
+        //validacion de booleano
+        $validateData['estado'] = $request->has('estado');
+
+
+        Cliente::create($validateData);
+
+        return  redirect()->route('clientes.index')->with('success', 'Registro creado exitosamente');
     }
 
-    
+
     
 }

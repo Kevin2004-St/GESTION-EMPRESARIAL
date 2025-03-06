@@ -20,13 +20,12 @@ class ClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            "nombres" => "required|min:5",
-            "apellidos" => "required|min:5",
-            "email" => "required|email|unique:clientes,email",
-            "celular" => "required|digits:10",
-            "direccion" => "nullable|min:5",
-            "fecha_nacimiento" => "nullable|date|before:today",
-            "estado" => "boolean",
+            'nombres' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'email' => 'required|email|unique:clientes,email',
+            'celular' => 'required|string|max:20',
+            'direccion' => 'nullable|string|max:255',
+            'fecha_nacimiento' => 'nullable|date',
         ];
     }
 
