@@ -20,12 +20,12 @@ class ClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombres' => 'required|string|max:255',
-            'apellidos' => 'required|string|max:255',
+            'nombres' => 'required|string|min:4',
+            'apellidos' => 'required|string|min:4',
             'email' => 'required|email|unique:clientes,email',
-            'celular' => 'required|string|max:20',
-            'direccion' => 'nullable|string|max:255',
-            'fecha_nacimiento' => 'nullable|date',
+            'celular' => 'required|string|min:10',
+            'direccion' => 'nullable|string|min:4',
+            'fecha_nacimiento' => 'nullable|date|before_or_equal:today',
         ];
     }
 
@@ -36,17 +36,14 @@ class ClienteRequest extends FormRequest
     {
         return [
             "nombres.required" => "El campo de nombre es obligatorio.",
-            "nombres.min" => "El nombre debe tener mínimo 5 caracteres.",
+            "nombres.min" => "El nombre debe tener mínimo 4 caracteres.",
             "apellidos.required" => "El campo de apellidos es obligatorio.",
-            "apellidos.min" => "El apellido debe tener mínimo 5 caracteres.",
-            "email.required" => "El campo de email es obligatorio.",
+            "apellidos.min" => "El apellido debe tener mínimo 4 caracteres.",
             "email.email" => "El email debe ser válido.",
             "email.unique" => "Este correo ya está registrado.",
-            "celular.required" => "El campo de celular es obligatorio.",
-            "celular.digits" => "El celular debe tener exactamente 10 dígitos.",
-            "direccion.min" => "La dirección debe tener mínimo 5 caracteres.",
-            "fecha_nacimiento.before" => "La fecha de nacimiento debe ser anterior a la fecha actual.",
-            "estado.boolean" => "El estado debe ser verdadero o falso.",
+            "celular.min" => "El celular debe tener exactamente 10 dígitos.",
+            "direccion.min" => "La dirección debe tener mínimo 3 caracteres.",
+            "fecha_nacimiento.before_or_equal" => "La fecha de nacimiento debe ser anterior a la fecha actual.",
         ];
     }
 }
