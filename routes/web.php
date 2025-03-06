@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [ClienteController::class, 'index'])->name('home');
 
 Route::prefix('clientes')->group(function(){
 
