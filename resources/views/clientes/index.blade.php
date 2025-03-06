@@ -9,8 +9,6 @@
 <div class="container">
     <h2>Lista de Clientes</h2>
     
-    <a href="{{ route('clientes.create') }}" class="btn btn-primary">Agregar Cliente</a>
-
     @if ($clientes->isEmpty())
         <div class="alert alert-info text-center mt-3">
             <i class="fas fa-exclamation-circle"></i> No hay clientes registrados.
