@@ -12,6 +12,14 @@
     <form action="{{ route('clientes.store') }}" method="POST">
         @csrf
         <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" name="cedula" class="form-control @error('cedula') is-invalid @enderror" value="{{ old('cedula') }}" required>
+            @error('cedula')
+            <span class="invalid-feedback">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <div class="form-group">
             <label for="nombres">Nombres</label>
             <input type="text" name="nombres" class="form-control @error('nombres') is-invalid @enderror" value="{{ old('nombres') }}" required>
             @error('nombres')
@@ -58,7 +66,7 @@
 
         <div class="form-group">
             <label for="estado">Activo</label>
-            <input type="checkbox" name="estado" value="1" class="form-check-input" >
+            <input type="checkbox" name="estado" class="form-check-input" >
         </div>
 
         <button type="submit" class="btn btn-success mt-3">Guardar</button>

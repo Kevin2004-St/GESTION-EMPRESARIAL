@@ -14,35 +14,43 @@
             <i class="fas fa-exclamation-circle"></i> No hay clientes registrados.
         </div>
     @else
-        <div class="table-responsive mt-3">
-            <table class="table table-bordered table-hover">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Celular</th>
-                        <th>Dirección</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($clientes as $cliente)
-                    <tr>
-                        <td>{{ $cliente->nombres }} {{ $cliente->apellidos }}</td>
-                        <td>{{ $cliente->email }}</td>
-                        <td>{{ $cliente->celular }}</td>
-                        <td>{{ $cliente->direccion }}</td>
-                        <td>{{ $cliente->fecha_nacimiento }}</td>
-                        <td>
-                            <span class="badge {{ $cliente->estado ? 'badge-success' : 'badge-danger' }}">
-                                {{ $cliente->estado ? 'Activo' : 'Inactivo' }}
-                            </span>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="table-container"> <!-- Contenedor más grande -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Celular</th>
+                            <th>Dirección</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Estado</th>
+                            <th class="acciones">Acciones</th> <!-- Espacio para los iconos -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($clientes as $cliente)
+                        <tr>
+                            <td>{{ $cliente->cedula }}</td>
+                            <td>{{ $cliente->nombres }} {{ $cliente->apellidos }}</td>
+                            <td>{{ $cliente->email }}</td>
+                            <td>{{ $cliente->celular }}</td>
+                            <td>{{ $cliente->direccion }}</td>
+                            <td>{{ $cliente->fecha_nacimiento }}</td>
+                            <td>
+                                <span class="badge {{ $cliente->estado ? 'badge-success' : 'badge-danger' }}">
+                                    {{ $cliente->estado ? 'Activo' : 'Inactivo' }}
+                                </span>
+                            </td>
+                            <td class="acciones"> 
+
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     @endif
 </div>

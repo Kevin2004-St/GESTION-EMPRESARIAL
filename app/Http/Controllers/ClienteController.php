@@ -28,8 +28,7 @@ class ClienteController extends Controller
         $validateData = $request->validated();
 
         //validacion de booleano
-        $validateData['estado'] = $request->has('estado');
-
+       $validateData['estado'] = $request->has('estado');
 
         Cliente::create($validateData);
 

@@ -18,7 +18,8 @@
         </div>
         <nav class="nav-links">
             <a href="{{ route('clientes.index') }}" class="{{ request()->routeIs('clientes.index') ? 'active' : '' }}">Clientes</a>
-            <a href="{{ route('clientes.create') }}" class="{{ request()->routeIs('clientes.create') ? 'active' : '' }}">Nuevo Cliente</a>
+            <a href="{{ route('clientes.create') }}" class="{{ request()->routeIs('clientes.create') ? 'active' : ''}}">Nuevo Cliente</a>
+            
         </nav>
     </div>
 </header>
