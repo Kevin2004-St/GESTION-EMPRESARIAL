@@ -36,5 +36,12 @@ class ClienteController extends Controller
     }
 
 
+    public function destroy($id){
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+
+        return redirect()->route('clientes.index')->with('success', 'Registro eliminado exitosamente');
+    }
+
     
 }

@@ -8,7 +8,6 @@
 
 <div class="container">
     <h2>Registrar Cliente</h2>
-
     <form action="{{ route('clientes.store') }}" method="POST">
         @csrf
         <div class="form-group">
@@ -21,14 +20,18 @@
 
         <div class="form-group">
             <label for="nombres">Nombres</label>
-            <input type="text" name="nombres" class="form-control @error('nombres') is-invalid @enderror" value="{{ old('nombres') }}" required>
+            <input type="text" name="nombres" class="form-control @error('nombres') is-invalid @enderror" value="{{ old('nombres') }}"
+            oninput="this.value = this.value.toUpperCase();"
+            required>
             @error('nombres')
             <span class="invalid-feedback">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" class="form-control @error('apellidos') is-invalid @enderror" value="{{ old('apellidos') }}" required>
+            <input type="text" name="apellidos" class="form-control @error('apellidos') is-invalid @enderror" value="{{ old('apellidos') }}" 
+            oninput="this.value = this.value.toUpperCase();"
+            required>
             @error('apellidos')
             <span class="invalid-feedback"> {{ $message }}</span>
             @enderror
@@ -36,7 +39,9 @@
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
+            oninput="this.value = this.value.toUpperCase();"
+            required>
              @error('email')
              <span class="invalid-feedback">{{ $message }}</span>
              @enderror
@@ -51,7 +56,9 @@
         </div>
         <div class="form-group">
             <label for="direccion">Dirección</label>
-            <input type="text" name="direccion" class="form-control @error('direccion') is-invalid @enderror" value="{{ old('direccion') }}" required>
+            <input type="text" name="direccion" class="form-control @error('direccion') is-invalid @enderror" value="{{ old('direccion') }}" 
+            oninput="this.value = this.value.toUpperCase();"
+            required>
             @error('direccion')
             <span class="invalid-feedback">{{ $message }}</span>
             @enderror

@@ -45,6 +45,18 @@
                             </td>
                             <td class="acciones"> 
 
+                            <a href="URL_A_DONDE_VAYA" class="iconos bg-naranja">
+                             <span class="material-symbols-outlined">upgrade</span>
+                            </a>
+                            
+                            <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" class="form">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="iconos btn-icono bg-rojo  material-symbols-outlined">
+                                    delete_forever
+                                </button>
+                            </form>
+
                             </td>
                         </tr>
                         @endforeach
