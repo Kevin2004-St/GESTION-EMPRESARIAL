@@ -45,7 +45,7 @@
                             </td>
                             <td class="acciones"> 
 
-                            <a href="URL_A_DONDE_VAYA" class="iconos bg-naranja">
+                            <a href="{{ route('clientes.edit', $cliente->id) }}" class="iconos bg-naranja">
                              <span class="material-symbols-outlined">upgrade</span>
                             </a>
                             
@@ -58,7 +58,7 @@
                             </form>
 
                             </td>
-                        </tr>
+                         </tr>
                         @endforeach
                     </tbody>
                 </table>
