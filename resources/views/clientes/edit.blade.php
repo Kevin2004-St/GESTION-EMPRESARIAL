@@ -66,7 +66,8 @@
         </div>
         <div class="form-group">
             <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-            <input type="date" name="fecha_nacimiento" class="form-control @error('fecha_nacimiento') is-invalid @enderror" value=" {{  $cliente->fecha_nacimiento }}" required>
+            <input type="date" name="fecha_nacimiento" class="form-control @error('fecha_nacimiento') is-invalid @enderror" 
+            value="{{ old('fecha_nacimiento', isset($cliente) ? trim($cliente->fecha_nacimiento) : '') }}"  required>
             @error('fecha_nacimiento')
             <span class="invalid-feedback">{{ $message }} </span>
             @enderror
@@ -74,7 +75,8 @@
 
         <div class="form-group">
             <label for="estado">Activo</label>
-            <input type="checkbox" name="estado" class="form-check-input" @if ($cliente->estado)>
+            <input type="checkbox" id="estadi" name="estado" class="form-check-input" @if ($cliente->estado)
+            checked
             @endif>
 
         </div>

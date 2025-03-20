@@ -26,12 +26,12 @@ class ClienteController extends Controller
     //Metodo para el registro de un cliente
     public function store(ClienteRequest $request){
 
-        $validateData = $request->validated();
+       $data = $request->validated();
 
         //validacion de booleano
-       $validateData['estado'] = $request->has('estado');
+       $data['estado'] = $request->has('estado');
 
-        Cliente::create($validateData);
+        Cliente::create($data);
 
         return  redirect()->route('clientes.index')->with('success', 'Registro creado exitosamente');
     }
@@ -51,13 +51,13 @@ class ClienteController extends Controller
     public function update(ClienteUpdate $request ,$id){
 
 
-        $validateData = $request->validated();
+        $data = $request->validated();
 
-        $validateData['estado'] = $request->has('estado');
+        $data['estado'] = $request->has('estado');
 
         $cliente = Cliente::findOrFail($id);
 
-        $cliente->update($validateData);
+        $cliente->update($data);
 
         return redirect()->route('clientes.index')->with('success', 'Registro actualizado exitosamente');
 

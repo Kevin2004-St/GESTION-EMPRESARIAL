@@ -73,7 +73,7 @@
 
         <div class="form-group">
             <label for="estado">Activo</label>
-            <input type="checkbox" name="estado" class="form-check-input" >
+            <input type="checkbox" id="estado" name="estado" class="form-check-input" >
         </div>
 
         <button type="submit" class="btn btn-success mt-3">Guardar</button>
