@@ -1,0 +1,25 @@
+/* Estilizar la barra de desplazamiento en navegadores basados en WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    height: 6px; /* Reduce el grosor */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la barra */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b0bec5; /* Color del control deslizante */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #78909c; /* Color al pasar el mouse */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.container:hover ::-webkit-scrollbar {
+    display: block;
+}

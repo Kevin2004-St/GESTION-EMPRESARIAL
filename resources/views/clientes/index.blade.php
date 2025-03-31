@@ -4,17 +4,26 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
+
 @endpush
 
 <div class="container">
     <h2>Lista de Clientes</h2>
+
+        <!-- Formulario de búsqueda -->
+        <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">
+          <input type="text" name="cedula" placeholder="Buscar por cédula o nombre">
+          <button type="submit" >Buscar</button>
+        </form>
+    
     
     @if ($clientes->isEmpty())
         <div class="alert alert-info text-center mt-3">
             <i class="fas fa-exclamation-circle"></i> No hay clientes registrados.
         </div>
     @else
-        <div class="table-container"> <!-- Contenedor más grande -->
+        <div class="table-container"><!-- Contenedor más grande -->
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead class="thead-dark">
