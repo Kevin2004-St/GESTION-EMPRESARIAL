@@ -1,50 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Mi Aplicación')</title>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Íconos de Google Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
-    
-    @stack('styles')  
-</head>
-<body>
-<header>
-    <div class="header-container">
-        <h1>Gestión de Clientes</h1>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-        <nav class="nav-links">
-            <a href="{{ route('clientes.index') }}" class="{{ request()->routeIs('clientes.index') ? 'active' : '' }}">Clientes</a>
-            <a href="{{ route('clientes.create') }}" class="{{ request()->routeIs('clientes.create') ? 'active' : ''}}">Nuevo Cliente</a>
-            
-        </nav>
-    </div>
-</header>
-    <main>
-        @if (session('success'))
-            <div id="alerta-exito" class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        @yield('content')
-    </main>
-
-    <footer>
-        <p>© 2025 Mi Aplicación Derechos Autor Kevin Fernandez</p>
-    </footer>
-
-    <!-- Llamada al script externo -->
-    <script src="{{ asset('js/alerta.js') }}"></script>
-    @stack('scripts') 
-</body>
+    </body>
 </html>
