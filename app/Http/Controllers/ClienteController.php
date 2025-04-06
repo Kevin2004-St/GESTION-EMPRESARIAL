@@ -14,7 +14,7 @@ class ClienteController extends Controller
         
         $clientes = Cliente::all();
         
-        return view('clientes.index', compact('clientes')); //compact = 'clientes' => $clientes
+        return view('clientes.index', compact('clientes')); //compact = 'clientes' => $clientes prueba
     }
 
     //Vista del formulario
