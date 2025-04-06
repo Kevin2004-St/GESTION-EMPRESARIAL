@@ -13,7 +13,7 @@ class ClienteController extends Controller
     public function index(){
 
         $userId = auth()->user()->id;
-        $clientes = Cliente::where('create_by', $userId)->paginate(5);
+        $clientes = Cliente::where('created_by', $userId)->paginate(5);
         
         return view('clientes.index', compact('clientes')); //compact = '   => $clientes 
     }

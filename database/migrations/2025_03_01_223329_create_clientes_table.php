@@ -15,7 +15,7 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('cedula')->unique();
+            $table->string('cedula');
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('email')->unique();
@@ -26,7 +26,7 @@ class CreateClientesTable extends Migration
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();
-            $table->unique(['code', 'created_by']);
+            $table->unique(['cedula', 'created_by']);
             $table->timestamps();
         });
     }
