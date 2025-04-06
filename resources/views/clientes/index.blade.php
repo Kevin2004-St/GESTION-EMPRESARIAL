@@ -7,7 +7,7 @@
 @endpush
 
 <div class="container">
-    <h2 class="tittle">Lista de Clientes</h2>
+    <h2 class="tittle">Clientes</h2>
     
     <!-- Formulario de búsqueda -->
     <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">

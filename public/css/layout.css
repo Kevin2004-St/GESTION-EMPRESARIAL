@@ -47,7 +47,6 @@ header {
 
 /* Main content */
 main {
-    flex: 1;
     padding: 20px;
     transition: margin-left 0.3s ease;
     margin-left: 250px; /* Sidebar expandido */
@@ -60,7 +59,7 @@ body.sidebar-collapsed main {
 
 /* Alerts */
 .alert {
-    text-align: center;
+    text-align: right;
     border-radius: 4px;
     padding: 12px;
     margin-bottom: 25px;
@@ -112,3 +111,4 @@ footer p {
     font-weight: bold;
     font-size: 16px;
 }
+

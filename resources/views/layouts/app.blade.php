@@ -28,18 +28,21 @@
         
     </div>
 </header>
-    <main>
-    @include('components.sidebar')
+   <main>
+     <div class="sidebar-container">
+        @include('components.sidebar')
 
-        @if (session('success'))
-            <div id="alerta-exito" class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
+        <div class="alert-content">
+            @if (session('success'))
+                <div id="alerta-exito" class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
 
-        @yield('content')
+            @yield('content')
+        </div>
+    </div>
     </main>
-
     <footer>
         <p>© 2025 Mi Aplicación Derechos Autor Kevin Fernandez</p>
     </footer>
