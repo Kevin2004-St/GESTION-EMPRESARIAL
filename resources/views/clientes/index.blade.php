@@ -4,7 +4,6 @@
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-<link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
 @endpush
 
 <div class="container">

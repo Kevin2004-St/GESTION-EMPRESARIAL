@@ -5,7 +5,6 @@
 
 <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-<link rel="stylesheet" href="{{ asset('css/scrollbar.css') }}">
 
 
 @endpush
