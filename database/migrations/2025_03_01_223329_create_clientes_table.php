@@ -23,6 +23,10 @@ class CreateClientesTable extends Migration
             $table->string('direccion')->nullable();
             $table->date('fecha_nacimiento')->nullable();
             $table->boolean('estado');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
+            $table->unique(['code', 'created_by']);
             $table->timestamps();
         });
     }

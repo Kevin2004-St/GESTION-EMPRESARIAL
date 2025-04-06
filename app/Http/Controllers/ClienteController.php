@@ -11,10 +11,11 @@ class ClienteController extends Controller
 {
     //Metodo del index
     public function index(){
+
+        $userId = auth()->user()->id;
+        $clientes = Cliente::where('create_by', $userId)->paginate(5);
         
-        $clientes = Cliente::all();
-        
-        return view('clientes.index', compact('clientes')); //compact = 'clientes' => $clientes prueba
+        return view('clientes.index', compact('clientes')); //compact = '   => $clientes 
     }
 
     //Vista del formulario
