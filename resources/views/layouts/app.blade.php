@@ -28,9 +28,9 @@
         
     </div>
 </header>
-@include('components.sidebar')
-
     <main>
+    @include('components.sidebar')
+
         @if (session('success'))
             <div id="alerta-exito" class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}

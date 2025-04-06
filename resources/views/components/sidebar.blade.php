@@ -7,6 +7,17 @@
             <a href="{{ route('clientes.index') }}" class="{{ request()->routeIs('clientes.index') ? 'active' : '' }}">📋 Ver Clientes</a>
             <a href="{{ route('clientes.create') }}" class="{{ request()->routeIs('clientes.create') ? 'active' : '' }}">➕ Nuevo Cliente</a>
         </div>
-
     </nav>
+
+
+     <!-- Botón de cerrar sesión en la parte inferior -->
+     <div class="logout-section">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="logout-button accordion-toggle">
+                <span class="material-symbols-outlined">logout</span> Cerrar sesión
+            </button>
+        </form>
+    </div>
+
 </div

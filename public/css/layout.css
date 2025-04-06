@@ -49,10 +49,13 @@ header {
 main {
     flex: 1;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-left: 300px;
-    width: 100%;
+    transition: margin-left 0.3s ease;
+    margin-left: 250px; /* Sidebar expandido */
+}
+
+/* Cuando el sidebar está colapsado */
+body.sidebar-collapsed main {
+    margin-left: 100px;
 }
 
 /* Alerts */
@@ -90,7 +93,14 @@ footer {
     text-align: center;
     border-top: 1px solid #e9ecef;
     margin-top: auto;
+    margin-left: 200px; /* Sidebar expandido */
+    transition: margin-left 0.3s ease;
 }
+
+body.sidebar-collapsed footer {
+    margin-left: 70px;
+}
+
 
 footer p {
     color: #6c757d;
@@ -102,4 +112,3 @@ footer p {
     font-weight: bold;
     font-size: 16px;
 }
-

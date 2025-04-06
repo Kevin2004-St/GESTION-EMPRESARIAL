@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const toggle = document.getElementById('toggleSidebar');
+    const body = document.body;
 
     toggle.addEventListener('click', () => {
         sidebar.classList.toggle('collapsed');
+        body.classList.toggle('sidebar-collapsed');
     });
 });

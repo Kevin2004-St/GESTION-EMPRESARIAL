@@ -8,21 +8,13 @@ body {
 
 /* Contenedor principal */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: margin-left 0.3s ease; 
-}
-
-
-h1{
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 600;
 }
 
 .tittle {
@@ -33,24 +25,24 @@ h1{
     color: #2c3e50;
     padding-bottom: 10px;
     border-bottom: 2px solid #f0f0f0;
-
 }
+
 /* Iconos */
 .iconos {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    padding: 10px;
+    font-size: 20px;
+    padding: 8px;
     border-radius: 6px;
     text-decoration: none;
     transition: background 0.3s ease;
     color: white;
-    width: 38px; 
-    height: 38px; 
+    width: 34px; 
+    height: 34px; 
 }
 
-.btn-icono{
+.btn-icono {
     border: none;
     padding: 0;
     background: none;
@@ -63,7 +55,6 @@ h1{
 
 .bg-rojo {
     background-color: #ff0000;
-
 }
 
 /* Alertas */
@@ -81,68 +72,90 @@ h1{
     border-left: 4px solid #28a745;
 }
 
-/* Tabla */
-.table-responsive {
+/* Nueva Tabla */
+.cliente-table-container {
+    width: 90%;
     margin-top: 25px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: auto;
     border-radius: 6px;
-    overflow: hidden;
-    overflow-x: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.table {
-    margin-bottom: 0;
-    background-color: white;
-    text-align: left;
+.cliente-table {
     width: 100%;
-    table-layout: auto;
     border-collapse: collapse;
-    min-width: 1300px;
-    border: 1px solid #ddd; /* Borde gris */
+    background-color: white;
+    font-size: 14px;
 }
 
-.table thead {
+.cliente-table thead {
     background-color: #f8f9fa;
-    width: 100%;
 }
 
-.table th {
+.cliente-table th {
     background-color: #f8f9fa;
     text-align: center;
     color: #2c3e50;
     font-weight: 600;
-    padding: 18px 40px;
+    padding: 14px 10px;
     border-bottom: 2px solid #e9ecef;
     border-top: none;
-    white-space: nowrap;
-    min-width: 120px;
 }
 
-.table td {
-    padding: 16px 20px;
+.cliente-table td {
+    padding: 12px 10px;
     text-align: center;
     vertical-align: middle;
     border-top: 1px solid #f0f0f0;
-    min-width: 120px;
-    white-space: nowrap; /* Evita que las palabras se rompan */
 }
 
-.table tbody tr {
+.cliente-table tbody tr {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.table tbody tr:hover {
+.cliente-table tbody tr:hover {
     background-color: #f8f9fa;
+}
+
+/* Columnas con anchos específicos */
+.cliente-table th:nth-child(1), 
+.cliente-table td:nth-child(1) {
+    width: 12%;
+}
+
+.cliente-table th:nth-child(2), 
+.cliente-table td:nth-child(2) {
+    width: 20%;
+}
+
+.cliente-table th:nth-child(3), 
+.cliente-table td:nth-child(3) {
+    width: 20%;
+}
+
+.cliente-table th:nth-child(4), 
+.cliente-table td:nth-child(4) {
+    width: 12%;
+}
+
+.cliente-table th:nth-child(5), 
+.cliente-table td:nth-child(5) {
+    width: 10%;
+}
+
+.cliente-table th:nth-child(6), 
+.cliente-table td:nth-child(6) {
+    width: 15%;
 }
 
 /* Estado del Cliente */
 .badge {
-    padding: 6px 10px;
+    padding: 5px 8px;
     border-radius: 4px;
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     display: inline-block;
-    min-width: 80px;
+    min-width: 70px;
     text-align: center;
 }
 
@@ -158,35 +171,14 @@ h1{
     border: 1px solid #ef9a9a;
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 992px) {
-    .container {
-        padding: 25px 20px;
-        margin: 30px 15px;
-        max-width: 95%;
-    }
-    
-    .table {
-        white-space: nowrap;
-    }
-    
-    .table-responsive {
-        overflow-x: auto;
-    }
+/* Acciones */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 20px 15px;
-        margin: 20px 10px;
-    }
-    
-    .table th, .table td {
-        padding: 14px 20px;
-    }    
-}
-
-.form{
+.form {
     display: inline;
 }
 
@@ -200,15 +192,14 @@ h1{
 }
 
 .form-busqueda input {
-    width: 280px;
+    width: 250px;
     padding: 8px;
     border: none;
-    border-bottom: 2px solid  #2c3e50;
+    border-bottom: 2px solid #2c3e50;
     outline: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
 }
-
 
 .form-busqueda button {
     background-color: #ff9800;
@@ -217,10 +208,35 @@ h1{
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .form-busqueda button:hover {
     background-color: #e68900;
 }
 
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .cliente-table {
+        font-size: 13px;
+    }
+    
+    .cliente-table th,
+    .cliente-table td {
+        padding: 10px 6px;
+    }
+    
+    .form-busqueda input {
+        width: 180px;
+    }
+    
+    .iconos {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+}
