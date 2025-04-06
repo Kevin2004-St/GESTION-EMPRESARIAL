@@ -4,30 +4,52 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+
+         <!-- Estilos personalizados -->
+        <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        @stack('styles')  
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<body class="sidebar-expanded">
+<header>
+    <div class="header-container">       
+        <div class="user-info text-white">
+         @auth
+        <h2 class="name-user">Bienvenido, {{ Auth::user()->name }}</h2>
+         @else
+        <a href="{{ route('login') }}" class="text-white underline">Iniciar sesión</a>
+        @endauth
         </div>
-    </body>
+        
+    </div>
+</header>
+@include('components.sidebar')
+
+    <main>
+        @if (session('success'))
+            <div id="alerta-exito" class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @yield('content')
+    </main>
+
+    <footer>
+        <p>© 2025 Mi Aplicación Derechos Autor Kevin Fernandez</p>
+    </footer>
+
+    <!-- Llamada al script externo -->
+    <script src="{{ asset('js/alerta.js') }}"></script>
+    <script src="{{ asset('js/sidebar.js') }}"></script>
+    
+    @stack('scripts') 
+</body>
+
 </html>
+

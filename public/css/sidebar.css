@@ -1,0 +1,90 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #2c3e50; 
+    z-index: 1000; 
+}
+
+
+.accordion-toggle {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    width: 90%;
+    padding: 10px 2px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.accordion-toggle:hover {
+    background-color: #374151;
+     transform: scale(1.02);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    margin-left: 20px; 
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 500px; 
+}
+
+.accordion-content a {
+    display: inline-block;
+    width: 90%;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 2.5px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.accordion-content a:hover,
+.accordion-content a.active {
+    background-color: #4b5563;
+}
+
+.sidebar-text{
+    text-align: left;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 20px 1px 20px 15px;
+    cursor: pointer;
+   
+}
+
+/* Estado contraído */
+.sidebar.collapsed {
+    width: 70px;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    margin-left: 5px;
+}
+
+.sidebar.collapsed .accordion-toggle,
+.sidebar.collapsed .accordion-content {
+    display: none;
+}
+
+/* Transición suave al expandir/colapsar */
+.sidebar {
+    transition: width 0.3s ease;
+}
+

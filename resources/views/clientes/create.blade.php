@@ -4,10 +4,12 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+
 @endpush
 
-<div class="container">
-    <h2>Registrar Cliente</h2>
+<div class="form-container">
+    <h2 class="form-text">Registrar Cliente</h2>
     <form action="{{ route('clientes.store') }}" method="POST">
         @csrf
         <div class="form-group">

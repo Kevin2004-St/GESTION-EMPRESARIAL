@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/formularios.css') }}">
 @endpush
 
-<div class="container">
+<div class="form-container">
     <h2>Editar Cliente</h2>
     <form action="{{ route('clientes.update', $cliente->id) }}" method="POST">
         @csrf

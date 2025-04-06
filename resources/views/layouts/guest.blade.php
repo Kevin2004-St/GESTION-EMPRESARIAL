@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
         <script src="{{ asset('js/app.js') }}" defer></script>    </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
