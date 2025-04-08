@@ -6,15 +6,32 @@ use App\Http\Requests\ClienteRequest;
 use App\Http\Requests\ClienteUpdate;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class ClienteController extends Controller
 {
     //Metodo del index
-    public function index(){
+    public function index(Request $request){
 
         $userId = auth()->user()->id;
         $clientes = Cliente::where('created_by', $userId)->paginate(5);
-        
+        $search = $request->get('search');
+
+        if(empty($search)){
+            $clientes = Cliente::paginate(5);
+        } else{
+            $fullSearch = Str::lower($search);
+            $Cedula = Cliente::whereRaw('cedula = ?', [$fullSearch])->exists();
+            $Name = Cliente::whereRaw('LOWER(nombres) =?', [$fullSearch])->exists(); 
+
+            if($Cedula){
+                $clientes = Cliente::whereRaw('cedula = ?', [$fullSearch])->paginate(1);
+            } else {
+                $clientes = Cliente::whereRaw('LOWER(nombres) LIKE ?' , ["%{$fullSearch}%"])->paginate(1);
+            }
+        }
+ 
         return view('clientes.index', compact('clientes')); //compact = '   => $clientes 
     }
 

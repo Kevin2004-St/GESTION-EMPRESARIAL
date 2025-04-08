@@ -32,7 +32,7 @@ body {
 
 
 .tittle {
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1.3s ease;
 }
 
 @keyframes fadeInDown {

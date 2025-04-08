@@ -10,7 +10,7 @@
     
     <!-- Formulario de búsqueda -->
     <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">
-        <input type="text" name="cedula" placeholder="Buscar por cédula o nombre">
+        <input type="text" name="search" placeholder="Buscar por cédula o nombre">
         <button type="submit">Buscar</button>
     </form>
     

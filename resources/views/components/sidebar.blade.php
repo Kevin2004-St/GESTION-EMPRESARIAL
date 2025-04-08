@@ -2,8 +2,10 @@
 
 <div class="sidebar" id="sidebar">
     <h2 class="sidebar-text" id="toggleSidebar">Gestor Empresarial</h2> 
+
     <nav class="sidebar-nav">
 
+        <!--Modulo Clientes -->
      <button class="accordion-toggle {{ Str::startsWith(Route::currentRouteName(), 'clientes.' ) ? 'active' : '' }}">
         📂 Clientes
      </button>
@@ -13,6 +15,8 @@
         </div>
     </nav>
 
+
+<!--Secciones de Inicio y cerrar sesión -->
     <div class="sidebar-section home-section">
         <a href="{{ route('home') }}" class="home-button accordion-toggle">
             <span class="material-symbols-outlined">home</span> Inicio
