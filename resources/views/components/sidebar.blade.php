@@ -13,11 +13,15 @@
         </div>
     </nav>
 
+    <div class="sidebar-section home-section">
+        <a href="{{ route('home') }}" class="home-button accordion-toggle">
+            <span class="material-symbols-outlined">home</span> Inicio
+        </a>
+    </div>
 
-     <!-- Botón de cerrar sesión en la parte inferior -->
-     <div class="logout-section">
+    <div class="sidebar-section logout-section">
         <form method="POST" action="{{ route('logout') }}">
-            @csrf
+        @csrf
             <button type="submit" class="logout-button accordion-toggle">
                 <span class="material-symbols-outlined">logout</span> Cerrar sesión
             </button>

@@ -79,9 +79,23 @@
     margin-left: 5px;
 }
 
+/* Ocultar el contenido del sidebar couando se contrae */
+.sidebar.collapsed .accordion-toggle,
+.sidebar.collapsed .accordion-content {
+    display: none;
+}
 
+.sidebar {
+    transition: width 0.3s ease;
+}
 
-/* Estilos cerrar sesion */
+/* Estilos cerrar sesion  y iniciar*/
+.home-section {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    text-align: center;
+}
 
 .logout-section {
     position: absolute;
@@ -113,4 +127,29 @@
     transform: scale(1.05);
 
 }
+
+.home-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.home-button:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+
+}
+
 

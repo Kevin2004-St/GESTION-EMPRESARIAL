@@ -2,8 +2,7 @@
 
 @section('content')
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/layout.css') }}">
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/clientes/index.css') }}">
 @endpush
 
 <div class="container">

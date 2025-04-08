@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\Index\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,10 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function(){
 
+    //RUTA DE BIENVENIDA
+    Route::get('/home', [IndexController::class, 'home'])->name('home');
+
+    //RUTAS CLIENTES
     Route::prefix('clientes')->group(function(){
 
         Route::get('/', [ClienteController::class, 'index'])->name('clientes.index');
