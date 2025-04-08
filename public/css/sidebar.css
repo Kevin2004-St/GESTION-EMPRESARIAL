@@ -24,15 +24,15 @@
 
 }
 
-.accordion-toggle:hover {
-    background-color: #374151;
+.accordion-toggle:hover,
+.accordion-toggle.active {
+    background-color: #f19e20;
      transform: scale(1.02);
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    flex-direction: column;
     margin-left: 20px; 
     transition: max-height 0.3s ease;
 }
@@ -48,14 +48,13 @@
     color: white;
     text-decoration: none;
     padding: 8px;
-    margin-top: 2.5px;
-    margin-left: 10px;
+    margin: 2.5px 0 2.5px 10px;
     transition: background-color 0.3s;
 }
 
 .accordion-content a:hover,
 .accordion-content a.active {
-    background-color: #4b5563;
+    background-color: #f19e20;
 }
 
 .sidebar-text{
@@ -80,15 +79,6 @@
     margin-left: 5px;
 }
 
-.sidebar.collapsed .accordion-toggle,
-.sidebar.collapsed .accordion-content {
-    display: none;
-}
-
-/* Transición suave al expandir/colapsar */
-.sidebar {
-    transition: width 0.3s ease;
-}
 
 
 /* Estilos cerrar sesion */
@@ -123,3 +113,4 @@
     transform: scale(1.05);
 
 }
+
