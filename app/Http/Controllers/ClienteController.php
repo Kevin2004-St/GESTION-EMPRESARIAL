@@ -32,12 +32,12 @@ class ClienteController extends Controller
             }
         }
  
-        return view('clientes.index', compact('clientes')); //compact = '   => $clientes 
+        return view('web.clientes.index', compact('clientes')); //compact = '   => $clientes 
     }
 
     //Vista del formulario
     public function create(){
-        return view('clientes.create');
+        return view('web.clientes.create');
     }
 
 
@@ -51,7 +51,7 @@ class ClienteController extends Controller
 
         Cliente::create($data);
 
-        return  redirect()->route('clientes.index')->with('success', 'Registro creado exitosamente');
+        return  redirect()->route('web.clientes.index')->with('success', 'Registro creado exitosamente');
     }
 
 
@@ -60,7 +60,7 @@ class ClienteController extends Controller
 
         $cliente = Cliente::findOrFail($id);
 
-        return view('clientes.edit', compact('cliente'));
+        return view('web.clientes.edit', compact('cliente'));
 
     }
 
@@ -77,7 +77,7 @@ class ClienteController extends Controller
 
         $cliente->update($data);
 
-        return redirect()->route('clientes.index')->with('success', 'Registro actualizado exitosamente');
+        return redirect()->route('web.clientes.index')->with('success', 'Registro actualizado exitosamente');
 
     }
 
@@ -87,7 +87,7 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
 
-        return redirect()->route('clientes.index')->with('success', 'Registro eliminado exitosamente');
+        return redirect()->route('web.clientes.index')->with('success', 'Registro eliminado exitosamente');
     }
 
     
