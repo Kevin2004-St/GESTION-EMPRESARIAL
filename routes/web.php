@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
+use App\Http\Controllers\Pdf\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,14 @@ Route::middleware(['auth'])->group(function(){
 
     //RUTA DE BIENVENIDA
     Route::get('/home', [IndexController::class, 'home'])->name('home');
+
+    //RUTAS PDF
+    Route::prefix('pdf')->group(function(){
+
+        Route::get('/clientes-pdf/', [PdfController::class, 'clientes'])->name('web.pdf.clientes');
+
+
+    });
 
     //RUTAS CLIENTES
     Route::prefix('clientes')->group(function(){

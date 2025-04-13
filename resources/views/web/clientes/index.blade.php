@@ -9,11 +9,17 @@
     <h2 class="tittle">Clientes</h2>
     
     <!-- Formulario de búsqueda -->
+    <div class="form-busqueda-contenedor">
     <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">
         <input type="text" name="search" placeholder="Buscar por cédula o nombre">
         <button type="submit">Buscar</button>
     </form>
-    
+
+        <a href="{{ route('web.pdf.clientes') }}" class="btn-crear">
+        Consolidado
+        </a>
+    </div>
+
     @if ($clientes->isEmpty())
         <div class="alert alert-info text-center mt-3">
             <i class="fas fa-exclamation-circle"></i> No hay clientes registrados.

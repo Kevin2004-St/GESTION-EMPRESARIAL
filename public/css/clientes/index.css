@@ -173,6 +173,28 @@ body {
 }
 
 /* Estilos del formulario de búsqueda */
+.form-busqueda-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-crear {
+    background-color: #ff9800;
+    color: white;
+    margin-right: 150px;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-crear:hover {
+    background-color: #e68900;
+}
+
 .form-busqueda {
     display: flex;
     justify-content: left;
