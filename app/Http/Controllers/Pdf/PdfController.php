@@ -20,7 +20,7 @@ class PdfController extends Controller
         $entities = Cliente::orderBy('id')->get();
 
         // Pasar los datos a la vista
-        $pdfView = view('pdf.clientes.index', compact('entities', 'fechaProceso'));
+        $pdfView = view('web.pdf.clientes.index', compact('entities', 'fechaProceso'));
 
         // Generar el PDF
         $pdf = \PDF::loadHtml($pdfView->render());
