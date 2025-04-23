@@ -51,7 +51,8 @@
     <!-- Llamada al script externo -->
     <script src="{{ asset('js/alerta.js') }}"></script>
     <script src="{{ asset('js/sidebar.js') }}"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/confirmacion.js') }}"></script>
     @stack('scripts') 
 </body>
 

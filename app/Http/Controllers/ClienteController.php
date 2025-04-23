@@ -51,7 +51,7 @@ class ClienteController extends Controller
 
         Cliente::create($data);
 
-        return  redirect()->route('web.clientes.index')->with('success', 'Registro creado exitosamente');
+        return  redirect()->route('clientes.index')->with('success', 'Registro creado exitosamente');
     }
 
 
@@ -77,7 +77,7 @@ class ClienteController extends Controller
 
         $cliente->update($data);
 
-        return redirect()->route('web.clientes.index')->with('success', 'Registro actualizado exitosamente');
+        return redirect()->route('clientes.index')->with('success', 'Registro actualizado exitosamente');
 
     }
 
@@ -87,7 +87,7 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
 
-        return redirect()->route('web.clientes.index')->with('success', 'Registro eliminado exitosamente');
+        return redirect()->route('clientes.index')->with('delete', 'Registro eliminado exitosamente');
     }
 
     

@@ -55,7 +55,7 @@
                                     <span class="material-symbols-outlined">upgrade</span>
                                 </a>
                                 
-                                <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" class="form">
+                                <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"  class="form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="iconos btn-icono bg-rojo material-symbols-outlined">
