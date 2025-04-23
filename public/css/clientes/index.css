@@ -62,7 +62,7 @@ body {
     border-left: 4px solid #28a745;
 }
 
-/* Nueva Tabla */
+/* Tabla */
 .cliente-table-container {
     width: 90%;
     margin-top: 25px;
@@ -180,7 +180,7 @@ body {
     margin-bottom: 20px;
 }
 
-.btn-crear {
+.btn-consolidado {
     background-color: #ff9800;
     color: white;
     margin-right: 150px;
@@ -188,10 +188,11 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
+    font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-crear:hover {
+.btn-consolidado:hover {
     background-color: #e68900;
 }
 

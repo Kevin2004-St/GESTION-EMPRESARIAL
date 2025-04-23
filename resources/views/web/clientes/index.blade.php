@@ -15,7 +15,7 @@
         <button type="submit">Buscar</button>
     </form>
 
-        <a href="{{ route('web.pdf.clientes') }}" class="btn-crear">
+        <a href="{{ route('web.pdf.clientes') }}" class="btn-consolidado">
         Consolidado
         </a>
     </div>
