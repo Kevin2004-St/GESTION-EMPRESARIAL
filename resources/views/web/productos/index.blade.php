@@ -6,47 +6,49 @@
 @endpush
 
 <div class="container">
-    <h2 class="tittle">Clientes</h2>
+    <h2 class="tittle">Productos</h2>
     
     <!-- Formulario de búsqueda -->
     <div class="form-busqueda-contenedor">
-    <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">
-        <input type="text" name="search" placeholder="Buscar por cédula o nombre">
+    <form method="GET" action="{{ route('productos.index') }}" class="form-busqueda">
+        <input type="text" name="search" placeholder="Buscar por nombre">
         <button type="submit">Buscar</button>
     </form>
 
-        <a href="{{ route('web.pdf.clientes') }}" class="btn-consolidado">
+        <a href="{{ route('web.pdf.productos') }}" class="btn-consolidado">
         Consolidado
         </a>
     </div>
 
-    @if ($clientes->isEmpty())
+    @if ($productos->isEmpty())
         <div class="alert alert-info text-center mt-3">
-            <i class="fas fa-exclamation-circle"></i> No hay clientes registrados.
+            <i class="fas fa-exclamation-circle"></i> No hay productos registrados.
         </div>
     @else
         <div class="table-container">
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Cédula</th>
                         <th>Nombre</th>
+                        <th>Descripcion</th>
                         <th>Email</th>
-                        <th>Celular</th>
+                        <th>Precio Unitario</th>
+                        <th>Stock</th>
                         <th>Estado</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($clientes as $cliente)
+                    @foreach($productos as $producto)
                     <tr>
-                        <td>{{ $cliente->cedula }}</td>
-                        <td>{{ $cliente->nombres }} {{ $cliente->apellidos }}</td>
-                        <td>{{ $cliente->email }}</td>
-                        <td>{{ $cliente->celular }}</td>
+                        <td>{{ $producto->nombre }}</td>
+                        <td>{{ $producto->descripcion }} </td>
+                        <td>{{ $producto->precio_unitario }}</td>
+                        <td>{{ $producto->stock }}</td>
+                        <td>{{ $producto->estado }}</td>
+
                         <td>
-                            <span class="badge {{ $cliente->estado ? 'badge-success' : 'badge-danger' }}">
-                                {{ $cliente->estado ? 'Activo' : 'Inactivo' }}
+                            <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">
+                                {{ $producto->estado ? 'Activo' : 'Inactivo' }}
                             </span>
                         </td>
                         <td class="acciones">

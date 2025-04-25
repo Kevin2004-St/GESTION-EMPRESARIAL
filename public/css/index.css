@@ -63,7 +63,7 @@ body {
 }
 
 /* Tabla */
-.cliente-table-container {
+.table-container {
     width: 90%;
     margin-top: 25px;
     overflow: auto;
@@ -71,18 +71,18 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.cliente-table {
+.data-table {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
     font-size: 14px;
 }
 
-.cliente-table thead {
+.data-table thead {
     background-color: #f8f9fa;
 }
 
-.cliente-table th {
+.data-table th {
     background-color: #f8f9fa;
     text-align: center;
     color: #2c3e50;
@@ -92,49 +92,49 @@ body {
     border-top: none;
 }
 
-.cliente-table td {
+.data-table td {
     padding: 12px 10px;
     text-align: center;
     vertical-align: middle;
     border-top: 1px solid #f0f0f0;
 }
 
-.cliente-table tbody tr {
+.data-table tbody tr {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.cliente-table tbody tr:hover {
+.data-table tbody tr:hover {
     background-color: #f8f9fa;
 }
 
 /* Columnas con anchos específicos */
-.cliente-table th:nth-child(1), 
-.cliente-table td:nth-child(1) {
+.data-table th:nth-child(1), 
+.data-table td:nth-child(1) {
     width: 12%;
 }
 
-.cliente-table th:nth-child(2), 
-.cliente-table td:nth-child(2) {
+.data-table th:nth-child(2), 
+.data-table td:nth-child(2) {
     width: 20%;
 }
 
-.cliente-table th:nth-child(3), 
-.cliente-table td:nth-child(3) {
+.data-table th:nth-child(3), 
+.data-table td:nth-child(3) {
     width: 20%;
 }
 
-.cliente-table th:nth-child(4), 
-.cliente-table td:nth-child(4) {
+.data-table th:nth-child(4), 
+.data-table td:nth-child(4) {
     width: 12%;
 }
 
-.cliente-table th:nth-child(5), 
-.cliente-table td:nth-child(5) {
+.data-table th:nth-child(5), 
+.data-table td:nth-child(5) {
     width: 10%;
 }
 
-.cliente-table th:nth-child(6), 
-.cliente-table td:nth-child(6) {
+.data-table th:nth-child(6), 
+.data-table td:nth-child(6) {
     width: 15%;
 }
 
@@ -237,12 +237,12 @@ body {
         padding: 20px 15px;
     }
     
-    .cliente-table {
+    .data-table {
         font-size: 13px;
     }
     
-    .cliente-table th,
-    .cliente-table td {
+    .data-table th,
+    .data-table td {
         padding: 10px 6px;
     }
     

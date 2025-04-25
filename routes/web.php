@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Pdf\PdfController;
+use App\Http\Controllers\Producto\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::middleware(['auth'])->group(function(){
     Route::prefix('pdf')->group(function(){
 
         Route::get('/clientes-pdf/', [PdfController::class, 'clientes'])->name('web.pdf.clientes');
+        Route::get('/productos-pdf/', [PdfController::class, 'productos'])->name('web.pdf.productos');
+
 
 
     });
@@ -45,6 +48,17 @@ Route::middleware(['auth'])->group(function(){
         Route::put('/{id}', [ClienteController::class, 'update'])->name('clientes.update');
         Route::delete('/destroy/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
     });    
+
+
+    //RUTAS PRODUCTOS
+    Route::prefix('productos')->group(function() {
+
+        Route::get('/', [ProductoController::class, 'index'])->name('productos.index');
+        Route::get('/create', [ProductoController::class, 'create'])->name('productos.create');
+        Route::post('/', [ProductoController::class, 'store'])->name('productos.store');
+
+
+    });
 
 });
 

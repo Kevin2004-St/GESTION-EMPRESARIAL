@@ -4,7 +4,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+
+        <!-- Iconos -->
+        <!-- Precargar fuente de Google para evitar flash -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Esta línea carga el CSS que activa los iconos -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+        <!-- Precarga directa del archivo WOFF2 (mejora visual) -->
+        <link rel="preload" as="font" type="font/woff2" crossorigin 
+        href="https://fonts.gstatic.com/s/materialsymbolsoutlined/v134/kJF1Bv0E3c4q6zWlZ2BOaW0AUnf5_A.woff2">
+
 
          <!-- Estilos personalizados -->
         <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
