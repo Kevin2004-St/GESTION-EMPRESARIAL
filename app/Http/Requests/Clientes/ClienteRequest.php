@@ -1,46 +1,43 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Clientes;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClienteUpdate extends FormRequest
+class ClienteRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
+     * Determina si el usuario está autorizado a hacer esta solicitud.
      */
     public function authorize()
     {
-        return true;
+        return true; // Permitir la validación
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
+     * Reglas de validación para la solicitud.
      */
     public function rules()
     {
         return [
-          
-            'cedula' => 'required|string|min:10|unique:clientes,cedula,' . $this->route('id') ,
-            "nombres" => "required|min:5",
-            "apellidos" => "required|min:5",
-            "email" => "required|email|unique:clientes,email," . $this->route('id'),
-            "celular" => "required|digits:10",
-            "direccion" => "nullable|min:5",
-            "fecha_nacimiento" => "nullable|date|before:today",
-        
+            'cedula' => 'required|string|min:10|unique:clientes,cedula',
+            'nombres' => 'required|string|min:4',
+            'apellidos' => 'required|string|min:4',
+            'email' => 'required|email|unique:clientes,email',
+            'celular' => 'required|string|min:10',
+            'direccion' => 'nullable|string|min:4',
+            'fecha_nacimiento' => 'nullable|date|before_or_equal:today',
         ];
     }
 
+    /**
+     * Mensajes personalizados para las reglas de validación.
+     */
     public function messages()
     {
         return [
-            "cedula.min" => "La cedula debe tener mínimo 10 digitos",
-            "cedula.unique" => "Esta cédula ya esta registrada",
+            "cedula.min" => "La cedula debe tener mínimo 10 digitos.",
+            "cedula.unique" => "Esta cédula ya esta registrada.",
             "nombres.required" => "El campo de nombre es obligatorio.",
             "nombres.min" => "El nombre debe tener mínimo 4 caracteres.",
             "apellidos.required" => "El campo de apellidos es obligatorio.",
@@ -53,4 +50,3 @@ class ClienteUpdate extends FormRequest
         ];
     }
 }
-

@@ -1,38 +1,41 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Clientes;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClienteRequest extends FormRequest
+class ClienteUpdate extends FormRequest
 {
     /**
-     * Determina si el usuario está autorizado a hacer esta solicitud.
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
     public function authorize()
     {
-        return true; // Permitir la validación
+        return true;
     }
 
     /**
-     * Reglas de validación para la solicitud.
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
      */
     public function rules()
     {
         return [
-            'cedula' => 'required|string|min:10|unique:clientes,cedula',
-            'nombres' => 'required|string|min:4',
-            'apellidos' => 'required|string|min:4',
-            'email' => 'required|email|unique:clientes,email',
-            'celular' => 'required|string|min:10',
-            'direccion' => 'nullable|string|min:4',
+          
+            'cedula' => 'required|string|min:10|unique:clientes,cedula,' . $this->route('id') ,
+            "nombres" => "required|min:5",
+            "apellidos" => "required|min:5",
+            "email" => "required|email|unique:clientes,email," . $this->route('id'),
+            "celular" => "required|digits:10",
+            "direccion" => "nullable|min:5",
             'fecha_nacimiento' => 'nullable|date|before_or_equal:today',
+        
         ];
     }
 
-    /**
-     * Mensajes personalizados para las reglas de validación.
-     */
     public function messages()
     {
         return [
@@ -50,3 +53,4 @@ class ClienteRequest extends FormRequest
         ];
     }
 }
+

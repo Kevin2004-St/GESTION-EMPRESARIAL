@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ClienteRequest;
-use App\Http\Requests\ClienteUpdate;
+use App\Http\Requests\Clientes\ClienteRequest;
+use App\Http\Requests\Clientes\ClienteUpdate;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
