@@ -46,8 +46,8 @@
                     <tr>
                         <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->descripcion ? $producto->descripcion : 'Sin descripción'  }} </td>
-                        <td>{{ $producto->precio_unitario }}</td>
-                        <td>{{ $producto->stock }}</td>
+                        <td>{{ number_format($producto->precio_unitario, 0, ',', '.') }}</td>
+                        <td>{{ $producto->stock ? $producto->stock: 'Sin unidades' }}</td>
 
                         <td>
                             <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">

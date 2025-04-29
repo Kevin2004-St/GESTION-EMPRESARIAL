@@ -27,7 +27,6 @@
                 <div class="form-group">
                     <label for="precio_unitario">Precio Unitario</label>
                     <input type="number" name="precio_unitario" class="form-control @error('precio_unitario') is-invalid @enderror" value="{{ old('precio_unitario') }}" 
-                    step="0.001"
                     required>
                     @error('precio_unitario')
                     <span class="invalid-feedback">{{ $message }}</span>

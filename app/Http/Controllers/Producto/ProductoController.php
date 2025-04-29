@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Producto;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Producto\ProductoRequest;
+use App\Http\Requests\Producto\ProductoUpdate;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -41,9 +42,32 @@ class ProductoController extends Controller
 
         $producto = Producto::findOrfail($id);
 
-        return view('productos.edit' , compact('productos'));
+        return view('productos.edit' , compact('producto'));
+    }
+
+    //Metodo para actualizar producto
+    public function update(ProductoUpdate $request, $id){
+
+        $data = $request->validated();
+
+        $producto = Producto::findOrfail($id);
+
+        $producto->update($data);
+
+        return redirect()->route('producto.index')->with('success', 'Registro actualizado exitosamente');
+        
+
     }
 
 
+    //Metodo para eliminar un producto
+    public function destroy($id){
+
+        $producto = Producto::findOrfail($id);
+        $producto->delete();
+
+        return redirect()->route('productos.index')->with('success', 'Registro eliminado exitosamente');
+
+    }
     
 }

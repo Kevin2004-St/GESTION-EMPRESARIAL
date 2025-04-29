@@ -13,6 +13,7 @@
         
         <form action="{{ route('clientes.store') }}" method="POST">
             @csrf
+            @method('POST')
             
             <div class="form-row">
                 <div class="form-group">

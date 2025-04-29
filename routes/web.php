@@ -4,6 +4,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\Producto\ProductoController;
+use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/create', [ProductoController::class, 'create'])->name('productos.create');
         Route::post('/', [ProductoController::class, 'store'])->name('productos.store');
         Route::get('/{id}', [ProductoController::class, 'edit'])->name('productos.edit');
+        Route::put('/{id}', [ProductoController::class, 'update'])->name('productos.update');
         Route::delete('/{id}', [ProductoController::class , 'destroy'])->name('productos.destroy');
 
 
