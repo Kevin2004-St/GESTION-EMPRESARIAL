@@ -35,20 +35,19 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Descripcion</th>
-                        <th>Email</th>
                         <th>Precio Unitario</th>
                         <th>Stock</th>
                         <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($productos as $producto)
                     <tr>
                         <td>{{ $producto->nombre }}</td>
-                        <td>{{ $producto->descripcion }} </td>
+                        <td>{{ $producto->descripcion ? $producto->descripcion : 'Sin descripción'  }} </td>
                         <td>{{ $producto->precio_unitario }}</td>
                         <td>{{ $producto->stock }}</td>
-                        <td>{{ $producto->estado }}</td>
 
                         <td>
                             <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">
@@ -57,11 +56,11 @@
                         </td>
                         <td class="acciones">
                             <div class="action-buttons">
-                                <a href="{{ route('clientes.edit', $cliente->id) }}" class="iconos bg-naranja">
+                                <a href="{{ route('productos.edit', $producto->id) }}" class="iconos bg-naranja">
                                     <span class="material-symbols-outlined">upgrade</span>
                                 </a>
                                 
-                                <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"  class="form">
+                                <form action="{{ route('productos.destroy', $producto->id) }}" method="POST"  class="form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="iconos btn-icono bg-rojo material-symbols-outlined">

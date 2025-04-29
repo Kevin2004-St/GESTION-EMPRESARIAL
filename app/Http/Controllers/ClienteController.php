@@ -60,7 +60,7 @@ class ClienteController extends Controller
 
         $cliente = Cliente::findOrFail($id);
 
-        return view('web.clientes.edit', compact('cliente'));
+        return view('web.clientes.edit', compact('clientes'));
 
     }
 

@@ -36,5 +36,14 @@ class ProductoController extends Controller
     }
 
 
+    //Metodo para las vitas de edit
+    public function edit($id){
+
+        $producto = Producto::findOrfail($id);
+
+        return view('productos.edit' , compact('productos'));
+    }
+
+
     
 }
