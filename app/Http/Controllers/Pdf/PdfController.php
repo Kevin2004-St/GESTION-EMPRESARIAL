@@ -26,7 +26,13 @@ class PdfController extends Controller
         $pdf = \PDF::loadHtml($pdfView->render());
         $pdf->setPaper('letter', 'portrait');
 
-        // Descargar el PDF en lugar de mostrarlo
-        return $pdf->stream('Listado_de_clientes.pdf', ['Attachment' => 0]);
+
+        //Mostrar el PDF y el usuario decide si descargar
+        return $pdf->stream('Listado_de_clientes.pdf');
+
+
+        // Descargar el PDF directamente 
+       // return $pdf->download('Listado_de_clientes.pdf');
+
     }
 }

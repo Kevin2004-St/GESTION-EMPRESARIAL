@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function(){
     //RUTAS PDF
     Route::prefix('pdf')->group(function(){
 
-        Route::get('/clientes-pdf/', [PdfController::class, 'clientes'])->name('web.pdf.clientes');
+        Route::get('/clientes/pdf', [PdfController::class, 'clientes'])->name('web.pdf.clientes');
         Route::get('/productos-pdf/', [PdfController::class, 'productos'])->name('web.pdf.productos');
 
 

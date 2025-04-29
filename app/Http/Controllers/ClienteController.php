@@ -60,7 +60,7 @@ class ClienteController extends Controller
 
         $cliente = Cliente::findOrFail($id);
 
-        return view('web.clientes.edit', compact('clientes'));
+        return view('web.clientes.edit', compact('cliente'));
 
     }
 
@@ -87,7 +87,7 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
 
-        return redirect()->route('clientes.index')->with('delete', 'Registro eliminado exitosamente');
+        return redirect()->route('clientes.index')->with('success', 'Registro eliminado exitosamente');
     }
 
     

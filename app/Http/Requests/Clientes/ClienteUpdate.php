@@ -29,7 +29,7 @@ class ClienteUpdate extends FormRequest
             "nombres" => "required|min:5",
             "apellidos" => "required|min:5",
             "email" => "required|email|unique:clientes,email," . $this->route('id'),
-            "celular" => "required|digits:10",
+            "celular" => "required|string|min:10",
             "direccion" => "nullable|min:5",
             'fecha_nacimiento' => 'nullable|date|before_or_equal:today',
         

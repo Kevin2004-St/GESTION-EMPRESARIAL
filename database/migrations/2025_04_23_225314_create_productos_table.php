@@ -17,7 +17,7 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion')->nullable();
-            $table->decimal('precio_unitario', 10 , 3  );
+            $table->decimal('precio_unitario', 100 , 3  );
             $table->integer('stock')->default(0);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
