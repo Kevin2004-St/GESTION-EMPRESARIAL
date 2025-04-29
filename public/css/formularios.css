@@ -157,6 +157,20 @@ label {
     margin-top: 5px;
 }
 
+
+/* Quitar spinner Para Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {

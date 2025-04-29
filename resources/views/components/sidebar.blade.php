@@ -21,6 +21,8 @@
      </button>
         <div class="accordion-content {{ Route::is('productos.*') ? 'open' : '' }}">
            <a href="{{ route('productos.index') }}" class="{{ Route::is('productos.index') ? 'active' : '' }}">📋 Ver Productos</a>
+           <a href="{{ route('productos.create') }}" class="{{ Route::is('productos.create') ? 'active' : '' }}">➕ Nuevo Producto</a>
+
         </div>
     </nav>
 

@@ -17,7 +17,6 @@ class Producto extends Model
         'descripcion',
         'precio_unitario',
         'stock',
-        'estado'
     ];
 
 
@@ -44,6 +43,12 @@ class Producto extends Model
             $empresa->save();
         });
 
+    }
+
+    //Funcion para el estado del producto
+    public function getEstadoAttribute(){
+        
+        return $this->stock > 0;
 
     }
 }

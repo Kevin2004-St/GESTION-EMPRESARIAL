@@ -11,14 +11,18 @@
     <!-- Formulario de búsqueda -->
     <div class="form-busqueda-contenedor">
     <form method="GET" action="{{ route('clientes.index') }}" class="form-busqueda">
-        <input type="text" name="search" placeholder="Buscar por cédula o nombre">
-        <button type="submit">Buscar</button>
-    </form>
+        
+        <input type="text" name="search" placeholder="Buscar por cédula o nombre" class="input-busqueda">
+        
+        <button type="submit" class="btn">Buscar</button>
 
         <a href="{{ route('web.pdf.clientes') }}" class="btn-consolidado">
-        Consolidado
+            Consolidado
         </a>
+
+    </form>
     </div>
+
 
     @if ($clientes->isEmpty())
         <div class="alert alert-info text-center mt-3">

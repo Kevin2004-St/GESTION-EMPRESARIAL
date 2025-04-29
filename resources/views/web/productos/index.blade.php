@@ -9,17 +9,21 @@
     <h2 class="tittle">Productos</h2>
     
     <!-- Formulario de búsqueda -->
-    <div class="form-busqueda-contenedor">
+      <!-- Formulario de búsqueda -->
+      <div class="form-busqueda-contenedor">
     <form method="GET" action="{{ route('productos.index') }}" class="form-busqueda">
-        <input type="text" name="search" placeholder="Buscar por nombre">
-        <button type="submit">Buscar</button>
-    </form>
+        
+        <input type="text" name="search" placeholder="Buscar por cédula o nombre" class="input-busqueda">
+        
+        <button type="submit" class="btn">Buscar</button>
 
-        <a href="{{ route('web.pdf.productos') }}" class="btn-consolidado">
-        Consolidado
+        <a href="{{ route('web.pdf.clientes') }}" class="btn-consolidado">
+            Consolidado
         </a>
-    </div>
 
+    </form>
+    </div>
+    
     @if ($productos->isEmpty())
         <div class="alert alert-info text-center mt-3">
             <i class="fas fa-exclamation-circle"></i> No hay productos registrados.
@@ -48,7 +52,7 @@
 
                         <td>
                             <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">
-                                {{ $producto->estado ? 'Activo' : 'Inactivo' }}
+                                {{ $producto->estado ? 'Disponible' : 'No Disponible' }}
                             </span>
                         </td>
                         <td class="acciones">

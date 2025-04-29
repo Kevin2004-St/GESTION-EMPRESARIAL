@@ -172,11 +172,7 @@ body {
     display: inline;
 }
 
-/* Estilos del formulario de búsqueda */
 .form-busqueda-contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -186,9 +182,10 @@ body {
     margin-right: 150px;
     padding: 8px 12px;
     text-decoration: none;
+    text-transform: uppercase;
     border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 11px;
+    
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -198,14 +195,15 @@ body {
 
 .form-busqueda {
     display: flex;
-    justify-content: left;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: flex-start; 
+    gap: 10px; 
+
 }
 
-.form-busqueda input {
-    width: 250px;
+.input-busqueda {
+    width: 300px; 
+    max-width: 100%;
     padding: 8px;
     border: none;
     background-color: #f8f9fa;
@@ -215,14 +213,16 @@ body {
     font-size: 14px;
 }
 
-.form-busqueda button {
+.btn{ 
+    
     background-color: #ff9800;
     color: white;
+    text-transform: uppercase;
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 
 }

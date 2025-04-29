@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Producto;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Producto\ProductoRequest;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,14 @@ class ProductoController extends Controller
         return view('web.productos.create');
     }
 
-    public function store(){
+    //Metodo para registrar un producto
+    public function store(ProductoRequest $request){
+
+        $data = $request->validated();
+
+        Producto::create($data);
+
+        return redirect()->route('productos.index')->with('success'. 'Registro creado exitosamente ');
         
     }
 
