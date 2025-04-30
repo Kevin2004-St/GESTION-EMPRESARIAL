@@ -25,7 +25,7 @@ class ProductoUpdate extends FormRequest
     {
         return [
             
-            'nombre' => 'required|min:3|max:100|unique:productos,nombre' . $this->route('$id'),
+            'nombre' => 'required|min:3|max:100|unique:productos,nombre,' . $this->route('id'),
             'descripcion' => 'nullable|min:5',
             'precio_unitario' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',

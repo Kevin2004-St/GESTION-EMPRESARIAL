@@ -42,7 +42,7 @@ class ProductoController extends Controller
 
         $producto = Producto::findOrfail($id);
 
-        return view('productos.edit' , compact('producto'));
+        return view('web.productos.edit' , compact('producto'));
     }
 
     //Metodo para actualizar producto
@@ -54,7 +54,7 @@ class ProductoController extends Controller
 
         $producto->update($data);
 
-        return redirect()->route('producto.index')->with('success', 'Registro actualizado exitosamente');
+        return redirect()->route('productos.index')->with('success', 'Registro actualizado exitosamente');
         
 
     }
