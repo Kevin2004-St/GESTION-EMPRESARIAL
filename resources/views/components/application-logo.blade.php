@@ -1,3 +1,3 @@
-<span class="material-symbols-outlined text-4xl text-gray-700"  style="font-size: 100px; color: #444 ">
-account_circle
-</span>
+<div class="flex justify-center mb-6">
+    <img src="{{ asset('img/logo2.png') }}" alt="Logo de la empresa" style="height: 100px; width: auto;">
+</div>

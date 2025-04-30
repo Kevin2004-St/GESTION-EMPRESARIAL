@@ -8,6 +8,5 @@
 <div class="container">
     <h2 class="tittle">GESTOR EMPRESARIAL</h2>
     
- 
 </div>
 @endsection

@@ -9,16 +9,18 @@
 }
 
 
-.accordion-toggle {
+.toggle {
     background-color: transparent;
     color: white;
     border: none;
     border-radius: 10px;
     text-align: left;
     width: 90%;
-    padding: 10px 2px;
+    padding: 10px 2px; 
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14.5px;
+    font-weight: bold;
+    text-transform: uppercase;
     margin: 5px 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 
@@ -46,6 +48,7 @@
     width: 90%;
     border-radius: 10px;
     color: white;
+    font-weight: bold;
     text-decoration: none;
     padding: 8px;
     margin: 2.5px 0 2.5px 10px;
@@ -151,5 +154,3 @@
     transform: scale(1.05);
 
 }
-
-
