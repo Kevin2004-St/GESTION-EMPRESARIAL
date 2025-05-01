@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pdf;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cliente;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class PdfController extends Controller
@@ -35,4 +36,33 @@ class PdfController extends Controller
        // return $pdf->download('Listado_de_clientes.pdf');
 
     }
+
+
+        //Metodo pdf productos
+        public function productos(Request $request){
+
+            set_time_limit(0);
+    
+            // Obtener la fecha de proceso (por ejemplo, la fecha actual)
+            $fechaProceso = date('Y-m-d');
+    
+            // Obtener los datos para el PDF
+            $entities = Producto::orderBy('id')->get();
+    
+            // Pasar los datos a la vista
+            $pdfView = view('web.pdf.productos.index', compact('entities', 'fechaProceso'));
+    
+            // Generar el PDF
+            $pdf = \PDF::loadHtml($pdfView->render());
+            $pdf->setPaper('letter', 'portrait');
+    
+    
+            //Mostrar el PDF y el usuario decide si descargar
+            return $pdf->stream('Listado_de_produtos.pdf');
+    
+    
+            // Descargar el PDF directamente 
+           // return $pdf->download('Listado_de_clientes.pdf');
+    
+        }
 }

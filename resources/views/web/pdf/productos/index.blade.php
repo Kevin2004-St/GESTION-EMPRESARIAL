@@ -1,6 +1,6 @@
 <style>
     * {
-        font-family: 'DejaVu Sans', sans-serif;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     body {
@@ -62,27 +62,25 @@
 </style>
 
 
-@include('web.pdf.includes.header', ['name' => 'Listado de clientes'])
+@include('web.pdf.includes.header', ['name' => 'Listado de productos'])
 <table class="cabecera">
     <thead>
         <tr>
-            <th>CEDULA</th>
             <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>EMAIL</th>
-            <th>CELULAR</th>
+            <th>DESCRIPCION</th>
+            <th>PRECIO UNITARIO</th>
+            <th>STOCK</th>
             <th>ESTADO</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($entities as $entity)
         <tr>
-            <td>{{ $entity->cedula }}</td>
-            <td>{{ $entity->nombres }}</td>
-            <td>{{ $entity->apellidos }}</td>
-            <td>{{ $entity->email }}</td>
-            <td>{{ $entity->celular }}</td>
-            <td>{{ $entity->estado ? 'Activo' : 'Inactivo' }}</td>
+        <td> {{ $entity->nombre }}</td>
+        <td>{{ $entity->descripcion ? $entity->descripcion : 'Sin descripción'  }} </td>
+        <td>{{ number_format($entity->precio_unitario, 0, ',', '.') }}</td>
+        <td>{{ $entity->stock ? $entity->stock: 'Sin unidades' }}</td>
+        <td> {{ $entity->estado ? 'Disponible' : 'No Disponible' }}</td>
         </tr>
         @endforeach
     </tbody>

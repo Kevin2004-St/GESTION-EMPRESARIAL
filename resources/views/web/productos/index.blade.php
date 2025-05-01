@@ -17,7 +17,7 @@
         
         <button type="submit" class="btn">Buscar</button>
 
-        <a href="{{ route('web.pdf.clientes') }}" class="btn-consolidado">
+        <a href="{{ route('productos.pdf') }}" target="_blank" class="btn-consolidado">
             Consolidado
         </a>
 

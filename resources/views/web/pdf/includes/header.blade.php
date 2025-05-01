@@ -62,7 +62,7 @@
         <td style="width: 50%;">
             <div class="encabezado">
                 <h4><strong>GESTOR EMPRESARIAL</strong></h4>
-                <p>Listado de Clientes</p>
+                <p>{{ $name ?? 'Consolidado general' }}</p>
             </div>
         </td>
         <td style="width: 25%;">

@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function(){
     Route::prefix('pdf')->group(function(){
 
         Route::get('/clientes/pdf', [PdfController::class, 'clientes'])->name('web.pdf.clientes');
-        Route::get('/productos-pdf/', [PdfController::class, 'productos'])->name('web.pdf.productos');
+        Route::get('/productos-pdf', [PdfController::class, 'productos'])->name('productos.pdf');
 
 
 
