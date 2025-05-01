@@ -1,7 +1,10 @@
 @php use Illuminate\Support\Str; @endphp
 
 <div class="sidebar" id="sidebar">
-    <h2 class="sidebar-text" id="toggleSidebar">Gestor Empresarial</h2> 
+
+    <div class="sidebar-logo" id="toggleSidebar">
+        <img src="{{ asset('img/logo-inicio.webp') }}" class="sidebar-img" alt="Gestor Empresarial" style="max-width: 100%; height: auto;">
+    </div>
 
     <nav class="sidebar-nav">
 

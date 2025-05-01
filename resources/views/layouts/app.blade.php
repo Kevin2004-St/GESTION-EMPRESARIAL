@@ -13,6 +13,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="icon" href="{{ asset('/icon/favicon.ico') }}" type="image/x-icon">
 
+        <!-- Imagenes-->
+        <link rel="preload" as="image" href="{{ asset('img/logo-login.webp') }}">
+        <link rel="preload" as="image" href="{{ asset('img/logo-inicio.webp' ) }}">
 
         <!-- Esta línea carga el CSS que activa los iconos -->
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
