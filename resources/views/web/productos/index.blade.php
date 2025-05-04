@@ -13,7 +13,7 @@
       <div class="form-busqueda-contenedor">
     <form method="GET" action="{{ route('productos.index') }}" class="form-busqueda">
         
-        <input type="text" name="search" placeholder="Buscar por cédula o nombre" class="input-busqueda">
+        <input type="text" name="search" placeholder="Buscar por nombre" class="input-busqueda">
         
         <button type="submit" class="btn">Buscar</button>
 
@@ -46,7 +46,7 @@
                     <tr>
                         <td>{{ $producto->nombre }}</td>
                         <td>{{ $producto->descripcion ? $producto->descripcion : 'Sin descripción'  }} </td>
-                        <td>{{ number_format($producto->precio_unitario, 0, ',', '.') }}</td>
+                        <td>$&nbsp;{{ number_format($producto->precio_unitario, 0, '.' , '.') }}</td>
                         <td>{{ $producto->stock ? $producto->stock: 'Sin unidades' }}</td>
 
                         <td>
