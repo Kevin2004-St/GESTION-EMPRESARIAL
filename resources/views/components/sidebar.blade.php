@@ -3,7 +3,7 @@
 <div class="sidebar" id="sidebar">
 
     <div class="sidebar-logo" id="toggleSidebar">
-        <img src="{{ asset('img/logo-inicio.webp') }}" class="sidebar-img" alt="Gestor Empresarial" style="max-width: 100%; height: auto;">
+        <img src="{{ asset('img/logo-inicio.webp') }}" class="sidebar-img" alt="Gestor Empresarial" style="max-width: 100%;">
     </div>
 
     <nav class="sidebar-nav">

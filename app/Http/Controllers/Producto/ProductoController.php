@@ -7,6 +7,7 @@ use App\Http\Requests\Producto\ProductoRequest;
 use App\Http\Requests\Producto\ProductoUpdate;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductoController extends Controller
 {
@@ -15,7 +16,15 @@ class ProductoController extends Controller
 
         $userid = auth()->user()->id;
         $productos = Producto::where('created_by' , $userid)->paginate(5);
-
+        $search = $request->get('search');
+    
+        if(empty($search)){
+            $productos = Producto::paginate(5);
+        } else {
+            $fullSearch = Str::lower($search);
+            $productos = Producto::whereRaw('LOWER(nombre) LIKE ?', ["%{$fullSearch}%"])->paginate(5);
+    
+        }
 
         return  view('web.productos.index', compact('productos'));
     }

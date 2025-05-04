@@ -22,14 +22,10 @@ class ClienteController extends Controller
             $clientes = Cliente::paginate(5);
         } else{
             $fullSearch = Str::lower($search);
-            $Cedula = Cliente::whereRaw('cedula = ?', [$fullSearch])->exists();
-            $Name = Cliente::whereRaw('LOWER(nombres) =?', [$fullSearch])->exists(); 
 
-            if($Cedula){
-                $clientes = Cliente::whereRaw('cedula = ?', [$fullSearch])->paginate(1);
-            } else {
-                $clientes = Cliente::whereRaw('LOWER(nombres) LIKE ?' , ["%{$fullSearch}%"])->paginate(1);
-            }
+            $clientes = Cliente::WhereRaw('cedula = ?', [$fullSearch])
+            ->orWhereRaw('LOWER(nombres) LIKE ?', ["%{$fullSearch}%"])
+            ->paginate(5);
         }
  
         return view('web.clientes.index', compact('clientes')); //compact = '   => $clientes 
