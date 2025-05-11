@@ -16,8 +16,6 @@
            <a href="{{ route('clientes.index') }}" class="{{ Route::is('clientes.index') ? 'active' : '' }}">📋 Ver clientes</a>
            <a href="{{ route('clientes.create') }}" class="{{ Route::is('clientes.create') ? 'active' : '' }}">➕ Nuevo cliente</a>
         </div>
-    </nav>
-
             <!--Modulo Productos -->
             <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'productos.' ) ? 'active' : '' }}">
         📂 Productos

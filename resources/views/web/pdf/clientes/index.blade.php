@@ -74,17 +74,21 @@
             <th>ESTADO</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach ($entities as $entity)
+  <tbody>
+    @forelse ($entities as $entity)
         <tr>
-            <td>{{ $entity->cedula }}</td>
-            <td>{{ $entity->nombres }}</td>
-            <td>{{ $entity->apellidos }}</td>
-            <td>{{ $entity->email }}</td>
-            <td>{{ $entity->celular }}</td>
-            <td>{{ $entity->estado ? 'Activo' : 'Inactivo' }}</td>
+            <td>{{ $entity->cedula  }}</td>
+            <td>{{ $entity->nombres  }}</td>
+            <td>{{ $entity->apellidos  }}</td>
+            <td>{{ $entity->email  }}</td>
+            <td>{{ $entity->celular  }}</td>
+            <td>{{ $entity->estado ? 'Activo' : 'Inactivado'  }}</td>
         </tr>
-        @endforeach
-    </tbody>
+     @empty
+        <tr>
+        <td colspan="6"> No hay clientes registrados </td>
+        </tr>
+    @endforelse   
+  </tbody>
 </table>
 @include('web.pdf.includes.footer')

@@ -74,7 +74,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($entities as $entity)
+        @forelse ($entities as $entity)
         <tr>
         <td> {{ $entity->nombre }}</td>
         <td>{{ $entity->descripcion ? $entity->descripcion : 'Sin descripción'  }} </td>
@@ -82,7 +82,11 @@
         <td>{{ $entity->stock ? $entity->stock: 'Sin unidades' }}</td>
         <td> {{ $entity->estado ? 'Disponible' : 'No Disponible' }}</td>
         </tr>
-        @endforeach
+        @empty
+        <tr>
+            <td colspan="5">No hay productos registrados</td>
+        </tr>
+        @endforelse
     </tbody>
 </table>
 @include('web.pdf.includes.footer')

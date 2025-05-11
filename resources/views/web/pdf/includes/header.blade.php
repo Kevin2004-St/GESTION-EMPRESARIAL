@@ -56,7 +56,7 @@
     <tr>
         <td style="width: 25%;">
             <div class="logo">
-                <img src="{{ public_path('img/logo2.png') }}" alt="Logo">
+                <img src="{{ public_path('img/logo-login.webp') }}" alt="Logo">
             </div>
         </td>
         <td style="width: 50%;">
