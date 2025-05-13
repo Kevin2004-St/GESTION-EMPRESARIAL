@@ -19,7 +19,7 @@ class CategoriaController extends Controller
         $search = request()->get('search');
 
         if(empty($search)){
-            $categorias =  Categorias::paginate(1);
+            $categorias =  Categorias::paginate(5);
         }else{
             $fullSearch = Str::lower($search);
             $categorias = Categorias::whereRaw('LOWER(nombre) LIKE ?', ["%{$fullSearch}%"])->paginate(1);

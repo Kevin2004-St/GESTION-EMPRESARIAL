@@ -36,6 +36,7 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,11 +52,11 @@
                         </td>
                         <td class="acciones">
                             <div class="action-buttons">
-                                <a href="{{ route('productos.edit', $producto->id) }}" class="iconos bg-naranja">
+                                <a href="{{ route('categorias.edit', $categoria->id) }}" class="iconos bg-naranja">
                                     <span class="material-symbols-outlined">upgrade</span>
                                 </a>
                                 
-                                <form action="{{ route('productos.destroy', $producto->id) }}" method="POST"  class="form">
+                                <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST"  class="form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="iconos btn-icono bg-rojo material-symbols-outlined">

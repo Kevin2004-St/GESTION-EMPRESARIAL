@@ -47,7 +47,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/', [ClienteController::class, 'index'])->name('clientes.index');
         Route::get('/create', [ClienteController::class, 'create'])->name('clientes.create');
         Route::post('/' , [ClienteController::class, 'store'])->name('clientes.store');
-        Route::get('/{id}/edit', [ClienteController::class, 'edit'])->name('clientes.edit');
+        Route::get('/{id}', [ClienteController::class, 'edit'])->name('clientes.edit');
         Route::put('/{id}', [ClienteController::class, 'update'])->name('clientes.update');
         Route::delete('/destroy/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
     });    
@@ -70,6 +70,9 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/', [CategoriaController::class, 'index'])->name('categorias.index');
         Route::get('/create', [CategoriaController::class, 'create'])->name('categorias.create');
         Route::post('/', [CategoriaController::class, 'store'])->name('categorias.store');
+        Route::get('/{id}', [CategoriaController::class, 'edit'])->name('categorias.edit');
+        Route::put('/{id}', [CategoriaController::class,'update'])->name('categorias.update');
+        Route::delete('/{id}', [CategoriaController::class,'destroy'])->name('categorias.destroy');
         
 
     });
