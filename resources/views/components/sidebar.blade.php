@@ -8,7 +8,7 @@
 
     <nav class="sidebar-nav">
 
-        <!--Modulo Clientes -->
+     <!--Modulo Clientes -->
      <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'clientes.' ) ? 'active' : '' }}">
         📂 Clientes
      </button>
@@ -16,19 +16,31 @@
            <a href="{{ route('clientes.index') }}" class="{{ Route::is('clientes.index') ? 'active' : '' }}">📋 Ver clientes</a>
            <a href="{{ route('clientes.create') }}" class="{{ Route::is('clientes.create') ? 'active' : '' }}">➕ Nuevo cliente</a>
         </div>
-            <!--Modulo Productos -->
-            <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'productos.' ) ? 'active' : '' }}">
+
+     <!--Modulo Productos -->
+     <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'productos.' ) ? 'active' : '' }}">
         📂 Productos
      </button>
         <div class="accordion-content {{ Route::is('productos.*') ? 'open' : '' }}">
            <a href="{{ route('productos.index') }}" class="{{ Route::is('productos.index') ? 'active' : '' }}">📋 Ver productos</a>
            <a href="{{ route('productos.create') }}" class="{{ Route::is('productos.create') ? 'active' : '' }}">➕ Nuevo producto</a>
-
         </div>
+
+    <!--Modulo Categorias -->
+     <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'categorias.' ) ? 'active' : '' }}">
+        📂 Categorias
+     </button>
+        <div class="accordion-content {{ Route::is('categorias.*') ? 'open' : '' }}">
+           <a href="{{ route('categorias.index') }}" class="{{ Route::is('categorias.index') ? 'active' : '' }}">📋 Ver categorias</a>
+           <a href="{{ route('categorias.create') }}" class="{{ Route::is('productos.create') ? 'active' : '' }}">➕ Nueva categoria</a>
+        </div>
+    
+
+
     </nav>
 
 
-<!--Secciones de Inicio y cerrar sesión -->
+    <!--Secciones de Inicio y cerrar sesión -->
     <div class="sidebar-section home-section">
         <a href="{{ route('home') }}" class="home-button  accordion-toggle ">
             <span class="material-symbols-outlined">home</span> Inicio
