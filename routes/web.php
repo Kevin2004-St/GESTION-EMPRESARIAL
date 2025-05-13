@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Categoria\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\Producto\ProductoController;
+use App\Models\Categorias;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
@@ -60,9 +62,18 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/{id}', [ProductoController::class, 'edit'])->name('productos.edit');
         Route::put('/{id}', [ProductoController::class, 'update'])->name('productos.update');
         Route::delete('/{id}', [ProductoController::class , 'destroy'])->name('productos.destroy');
+    });
 
+    //RUTAS CATEGORIAS
+    Route::prefix('categorias')->group(function() {
+
+        Route::get('/', [CategoriaController::class, 'index'])->name('categorias.index');
+        Route::get('/create', [CategoriaController::class, 'create'])->name('categorias.create');
+        Route::post('/', [CategoriaController::class, 'store'])->name('categorias.store');
+        
 
     });
+
 
 });
 
