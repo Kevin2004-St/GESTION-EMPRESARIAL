@@ -45,7 +45,7 @@
                         <td>{{ $categoria->descripcion ? $categoria->descripcion : 'Sin descripcion'}} </td>
 
                         <td>
-                            <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">
+                            <span class="badge {{ $categoria->estado ? 'badge-success' : 'badge-danger' }}">
                                 {{ $categoria->estado ? 'Activo' : 'Inactivo' }}
                             </span>
                         </td>

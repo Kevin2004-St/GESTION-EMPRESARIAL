@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="form-container">
-        <h2 class="form-title">Registrar Cliente</h2>
+        <h2 class="form-title">Registrar nuevo cliente</h2>
         
         <form action="{{ route('clientes.store') }}" method="POST">
             @csrf

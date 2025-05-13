@@ -32,7 +32,7 @@
      </button>
         <div class="accordion-content {{ Route::is('categorias.*') ? 'open' : '' }}">
            <a href="{{ route('categorias.index') }}" class="{{ Route::is('categorias.index') ? 'active' : '' }}">📋 Ver categorias</a>
-           <a href="{{ route('categorias.create') }}" class="{{ Route::is('productos.create') ? 'active' : '' }}">➕ Nueva categoria</a>
+           <a href="{{ route('categorias.create') }}" class="{{ Route::is('categorias.create') ? 'active' : '' }}">➕ Nueva categoria</a>
         </div>
     
 
