@@ -25,8 +25,7 @@ class CategoriaRequest extends FormRequest
     {
         return [
             'nombre' => 'required|unique:categorias,nombre|min:3|max:100',
-            'descripcion' => 'nulleable|min:5',
-            'estado' => 'boolean',
+            'descripcion' => 'nullable',
         ];
     }
 

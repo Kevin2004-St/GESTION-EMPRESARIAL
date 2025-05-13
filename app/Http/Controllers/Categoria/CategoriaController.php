@@ -31,7 +31,7 @@ class CategoriaController extends Controller
 
     //Vista de formulario
     public function create(){
-        return view('web.categorias.index');
+        return view('web.categorias.create');
     }
 
     //Metodo para crear categoria
@@ -44,7 +44,7 @@ class CategoriaController extends Controller
 
         Categorias::create($data);
 
-        return redirect()->route('web.categorias.index')->with('success', 'Registro creado exitosamente');
+        return redirect()->route('categorias.index')->with('success', 'Registro creado exitosamente');
     }
     
 

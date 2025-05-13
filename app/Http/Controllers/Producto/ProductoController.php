@@ -41,7 +41,7 @@ class ProductoController extends Controller
 
         Producto::create($data);
 
-        return redirect()->route('productos.index')->with('success'. 'Registro creado exitosamente ');
+        return redirect()->route('productos.index')->with('success', 'Registro creado exitosamente ');
         
     }
 
