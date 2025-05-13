@@ -15,7 +15,7 @@ class ProductoController extends Controller
     public function index(Request $request){
 
         $userId = auth()->user()->id;
-        $productos = Producto::where('created_by' , $userId)->paginate(5);
+        $productos = Producto::where('created_by' , $userId);
         $search = $request->get('search');
     
         if(empty($search)){

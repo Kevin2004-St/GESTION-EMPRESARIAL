@@ -15,7 +15,7 @@ class ClienteController extends Controller
     public function index(Request $request){
 
         $userId = auth()->user()->id;
-        $clientes = Cliente::where('created_by', $userId)->paginate(5);
+        $clientes = Cliente::where('created_by', $userId);
         $search = $request->get('search');
 
         if(empty($search)){
