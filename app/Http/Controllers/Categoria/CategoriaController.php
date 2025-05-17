@@ -46,6 +46,44 @@ class CategoriaController extends Controller
 
         return redirect()->route('categorias.index')->with('success', 'Registro creado exitosamente');
     }
+
+
+    //Metodo para vista de update
+    public function edit($id){
+
+        $categorias = Categorias::findOrFail($id);
+
+        return view('web.categorias.edit', compact('categorias'));
+    }
+
+    //Metodo para actualizar una categoria
+    public function update(CategoriaRequest $request, $id){
+
+        $data = $request->validated();
+
+        //Validacion de estado
+        $data['estado'] = $request->has('estado');
+
+        $categorias = Categorias::findOrFail($id);
+
+        $categorias->update($data);
+
+        return redirect()->route('categorias.index')->with('success', 'Registro actualizado exitosamente');
+
+
+    }
+
+
+    //Metodo para eliminar una categoria
+    public function destroy($id){
+
+        $categoria = Categorias::findOrFail($id);
+
+        $categoria->delete();
+
+        return redirect()->route('categorias.index')->with('success','Registro eliminado exitosamente');
+
+    }
     
 
 
