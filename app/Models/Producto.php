@@ -17,6 +17,7 @@ class Producto extends Model
         'descripcion',
         'precio_unitario',
         'stock',
+        'categoria_id'
     ];
 
 
@@ -50,5 +51,10 @@ class Producto extends Model
         
         return $this->stock > 0;
 
+    }
+
+    //Establecer relacion con categorias
+    public function categoria(){
+        return $this->belongsTo(Categorias::class);
     }
 }

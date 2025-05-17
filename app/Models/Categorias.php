@@ -41,5 +41,10 @@ class Categorias extends Model
         });
 
     }
+
+    //Establecer relacion con productos
+    public function productos(){
+        return $this->hasMany(Producto::class);
+    }
     
 }
