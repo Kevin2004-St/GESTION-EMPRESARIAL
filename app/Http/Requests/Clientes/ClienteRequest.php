@@ -20,10 +20,10 @@ class ClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'cedula' => 'required|string|min:10|unique:clientes,cedula',
+            'cedula' => 'required|string|min:10|unique:clientes,cedula,'. $this->route('id'),
             'nombres' => 'required|string|min:4',
             'apellidos' => 'required|string|min:4',
-            'email' => 'required|email|unique:clientes,email',
+            'email' => 'required|email|unique:clientes,email,' . $this->route('id'),
             'celular' => 'required|string|min:10',
             'direccion' => 'nullable|string|min:4',
             'fecha_nacimiento' => 'nullable|date|before_or_equal:today',
