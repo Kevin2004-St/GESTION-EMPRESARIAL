@@ -55,7 +55,7 @@ class ProductoController extends Controller
     }
 
     //Metodo para actualizar producto
-    public function update(ProductoUpdate $request, $id){
+    public function update(ProductoRequest $request, $id){
 
         $data = $request->validated();
 

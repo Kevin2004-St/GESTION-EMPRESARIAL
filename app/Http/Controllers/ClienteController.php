@@ -62,7 +62,7 @@ class ClienteController extends Controller
 
 
     //Metodo para actualizar cliente
-    public function update(ClienteUpdate $request ,$id){
+    public function update(ClienteRequest $request ,$id){
 
 
         $data = $request->validated();
