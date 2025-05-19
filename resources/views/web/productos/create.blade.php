@@ -8,7 +8,7 @@
 @endpush
 
 <div class="container">
-    <div class="form-container">
+    <div class="form-container-estrecho">
         <h2 class="form-title">Registrar nuevo producto</h2>
         
         <form action="{{ route('productos.store') }}" method="POST">
@@ -45,8 +45,25 @@
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
+
+            <div class="form-group">
+                <label for="categoria_id">Categoría</label>
+                <select name="categoria_id" id="categoria_id" class="form-control" required >
+                    <option value="">-- Selecciona una categoría --</option>
+                    @foreach($categorias as $categoria)
+                        <option value="{{ $categoria->id }}" {{ old('categoria_id', $producto->categoria_id ?? '' )== $categoria->id ? 'selected': '' }} >
+                            {{ $categoria->nombre }}
+                        </option>
+                    @endforeach
+                </select>
+
+            </div>
                 
-                <div class="form-group">
+              
+            </div>
+
+            <div class="form-row">
+                  <div class="form-group">
                     <label for="descripcion">Descripción</label>
                     <textarea type="text" name="descripcion" class="form-control @error('descripcion') is-invalid @enderror" rows="3" value="{{ old('descripcion') }}" 
                     oninput="this.value = this.value.toUpperCase();"></textarea>

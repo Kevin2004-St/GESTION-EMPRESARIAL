@@ -37,6 +37,7 @@
                         <th>Descripcion</th>
                         <th>Precio Unitario</th>
                         <th>Stock</th>
+                        <th>Categoria</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
@@ -48,6 +49,7 @@
                         <td>{{ $producto->descripcion ? $producto->descripcion : 'Sin descripción'  }} </td>
                         <td>$&nbsp;{{ number_format($producto->precio_unitario, 0, '.' , '.') }}</td>
                         <td>{{ $producto->stock ? $producto->stock: 'Sin unidades' }}</td>
+                        <td>{{ $producto->categoria->nombre }}</td>
 
                         <td>
                             <span class="badge {{ $producto->estado ? 'badge-success' : 'badge-danger' }}">

@@ -22,12 +22,13 @@ class ProductoRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {          
         return [
 
-            'nombre' => 'required|min:3|max:100|unique:productos,nombre,' . $this->route('id'),
+            'nombre' => 'required|min:3|max:100|unique:productos,nombre' . $this->route('id'),
             'descripcion' => 'nullable|min:5',
             'precio_unitario' => 'required|numeric|min:0',
+            'categoria_id' => 'required|exists:categorias,id',
             'stock' => 'required|integer|min:0',
             
         ];
@@ -41,6 +42,8 @@ class ProductoRequest extends FormRequest
         'nombre.required' => 'El nombre del producto es obligatorio.',
         'nombre.unique' => 'Este nombre de producto ya esta registado.',
         'precio_unitario.required' => 'El precio es obligatorio.',
+        'categoria_id.required' => 'Debe seleccionar una categoría.',
+        'categoria_id.exists' => 'La categoría seleccionada no existe.',
         'stock.required' => 'El stock es obligatorio.',
 
         ];

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Producto;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Producto\ProductoRequest;
 use App\Http\Requests\Producto\ProductoUpdate;
+use App\Models\Categorias;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -31,7 +32,10 @@ class ProductoController extends Controller
 
     //Vista del formulario
     public function create(){
-        return view('web.productos.create');
+
+        $categorias = Categorias::where('estado',true)->get(); 
+
+        return view('web.productos.create', compact('categorias'));
     }
 
     //Metodo para registrar un producto
@@ -50,6 +54,8 @@ class ProductoController extends Controller
     public function edit($id){
 
         $producto = Producto::findOrfail($id);
+
+        $categorias = Categorias::where('estado', true)->get();
 
         return view('web.productos.edit' , compact('producto'));
     }
