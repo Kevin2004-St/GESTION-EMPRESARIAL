@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth', 'verified'])->group(function(){
 
     //RUTA DE BIENVENIDA
     Route::get('/home', [IndexController::class, 'home'])->name('home');
