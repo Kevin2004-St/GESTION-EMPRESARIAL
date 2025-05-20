@@ -3,6 +3,8 @@
 namespace App\Http\Requests\Categorias;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
 
 class CategoriaRequest extends FormRequest
 {
@@ -23,8 +25,17 @@ class CategoriaRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('id');
+
         return [
-            'nombre' => 'required|unique:categorias,nombre|min:3|max:100',
+
+            'nombre' => [
+                'required',
+                'min:3',
+                'max:50',
+                Rule::unique('categorias', 'nombre')->ignore($id),
+            ],
+
             'descripcion' => 'nullable',
         ];
     }
@@ -37,6 +48,7 @@ class CategoriaRequest extends FormRequest
             'nombre.required' => 'El campo de nombre es obligatorio.',
             'nombre.unique' => 'El nombre de esta categoria ya existe.',
             'nombre.min' => 'El nombre debe tener al menos 3 caracteres',
+            'nombre.max' => 'El nombre no puede superar los 50 caracteres'
         ];
     }
 }

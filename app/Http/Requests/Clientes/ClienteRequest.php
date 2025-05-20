@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Requests\Clientes;
+use Illuminate\Validation\Rule;
+
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -19,11 +21,24 @@ class ClienteRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('id');
         return [
-            'cedula' => 'required|string|min:10|unique:clientes,cedula,'. $this->route('id'),
+
+            'cedula' => [
+                'required',
+                'string',
+                'min:10',
+                Rule::unique('clientes', 'cedula')->ignore($id),
+            ],
+
             'nombres' => 'required|string|min:4',
             'apellidos' => 'required|string|min:4',
-            'email' => 'required|email|unique:clientes,email,' . $this->route('id'),
+
+            'email'=> [
+                'required',
+                'email',
+                Rule::unique('clientes', 'email')->ignore($id),
+            ],
             'celular' => 'required|string|min:10',
             'direccion' => 'nullable|string|min:4',
             'fecha_nacimiento' => 'nullable|date|before_or_equal:today',

@@ -11,7 +11,7 @@
     <div class="form-container-estrecho">
         <h2 class="form-title">Editar categoria</h2>
         
-        <form action="{{ route('categorias.store', $categorias->id) }}" method="POST">
+        <form action="{{ route('categorias.update', $categorias->id) }}" method="POST">
             @csrf
             @method('PUT')
 
