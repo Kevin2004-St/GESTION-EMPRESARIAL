@@ -56,12 +56,9 @@
                         </option>
                     @endforeach
                 </select>
-
             </div>
-                
-              
+                      
             </div>
-
             <div class="form-row">
                   <div class="form-group">
                     <label for="descripcion">Descripción</label>

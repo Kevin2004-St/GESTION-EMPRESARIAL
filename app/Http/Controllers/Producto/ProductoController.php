@@ -57,7 +57,7 @@ class ProductoController extends Controller
 
         $categorias = Categorias::where('estado', true)->get();
 
-        return view('web.productos.edit' , compact('producto'));
+        return view('web.productos.edit' , compact('producto', 'categorias'));
     }
 
     //Metodo para actualizar producto
