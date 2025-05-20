@@ -81,15 +81,10 @@ PostgreSQL – Sistema de gestión de base de datos relacional, utilizado para a
 ## MODULOS IMPLEMENTADOS 
 
 Módulo de Clientes
-Este módulo permite la gestión completa de los clientes registrados en el sistema. Las funcionalidades actuales incluyen:
 
-Listado de clientes: Vista general con todos los clientes almacenados.
+Módulo de Productos
 
-Registro de nuevos clientes: Formulario para añadir clientes al sistema.
-
-Edición de clientes existentes: Modificación de los datos de un cliente ya registrado.
-
-Eliminación de clientes: Opción para borrar clientes del sistema.
+Módulo de Categroias
 
 Validación de formularios: Se valida el ingreso correcto de los datos.
 
@@ -104,7 +99,9 @@ PROXIMAMENTE VENTAS
 ## FUNCIONALIDADES
 
 Autenticación de usuarios (Login y Logout):
-Sistema de inicio y cierre de sesión para acceder al panel administrativo. Protege el acceso a las funcionalidades del sistema.
+Sistema de inicio y cierre de sesión, por ahora usando una autenticacion basica con verificacion de identidad por correo electronico, el enfoque tiene la siguientes caracteristicas: Contraseña cifrada, verificacion de email, autenticacion de un solo factor, trasmisión vía TLS, en el futuro se plantea mejorar a implementar 2FA(doble factor de autenticacion)
+
+Ademas de limitar intentos de login para prevenir fuerza bruta
 
 CRUD de Clientes:
 Permite crear, visualizar, actualizar y eliminar registros de clientes.
@@ -125,10 +122,18 @@ El sistema cuenta con una barra lateral que adapta su estado según la ruta actu
 Alertas animadas de éxito:
 Las operaciones exitosas como crear, editar o eliminar muestran alertas temporales con transiciones suaves, mejorando la experiencia del usuario.
 
+Autenticacion de un solo factor(1FA) (Por ahora)
+Agregamos esta capa de confianza adiconal, ademas de las contraseñas encriptadas, asegurando que el email ingresado realmente pertenece al usuario. Empleamos Mailtrap para pruebas via TLS
+
 ## CONTROLADORES
 
 ClienteController (TERMINADO)
 
+ProductoController (TERMINADO)
+
+CategoriaController (TERMINADO)
+
+CONTROLADORES AUTH (PARA AUTENTICACION-- EN PROCESO)
 
 ## ARCHIVOS DEL PROYECTO
 
