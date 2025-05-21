@@ -6,7 +6,7 @@
 @endpush
 
 <div class="container">
-    <h2 class="tittle">GESTOR EMPRESARIAL</h2>
+    <h2 class="tittle">EMPREX</h2>
     
 </div>
 @endsection
