@@ -1,7 +1,7 @@
 /* Estilos Generales */
 body {
     background-color: #f8f9fa;
-    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     line-height: 1.6;
 }
@@ -185,6 +185,7 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     font-size: 11px;
+    font-weight: bold;
     
     transition: background-color 0.3s ease, transform 0.3s ease;
 }

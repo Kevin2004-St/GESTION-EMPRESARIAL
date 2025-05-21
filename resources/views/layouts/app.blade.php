@@ -9,8 +9,7 @@
 
         <!-- Iconos -->
         <!-- Precargar fuente de Google para evitar flash -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
         <link rel="icon" href="{{ asset('/icon/favicon.ico') }}" type="image/x-icon">
 
         <!-- Imagenes-->

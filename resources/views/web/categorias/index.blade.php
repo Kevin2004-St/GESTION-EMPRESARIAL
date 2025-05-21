@@ -18,7 +18,8 @@
         <button type="submit" class="btn">Buscar</button>
 
         <a href="{{ route('productos.pdf') }}" target="_blank" class="btn-consolidado">
-            Consolidado
+         Ver reporte de categorias
+
         </a>
 
     </form>

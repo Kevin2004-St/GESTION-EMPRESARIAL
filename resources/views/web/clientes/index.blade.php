@@ -16,8 +16,8 @@
         
         <button type="submit" class="btn">Buscar</button>
 
-        <a href="{{ route('web.pdf.clientes') }}" target="_blank" class="btn-consolidado">
-            Consolidado
+        <a href="{{ route('clientes.pdf') }}" target="_blank" class="btn-consolidado">
+            Ver reporte de clientes
         </a>
 
     </form>
