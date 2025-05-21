@@ -54,108 +54,106 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## GESTOR EMPRESARIAL
+# Emprex - Gestor Empresarial
 
-Gestor Empresarial es un sistema de información diseñado para facilitar la administración de diversos procesos empresariales como la gestión de clientes, ventas, productos, entre otros módulos que se pueden integrar fácilmente.
+**Emprex** es un sistema de información diseñado para facilitar la administración de procesos empresariales, como la gestión de clientes, ventas, productos y más. Los módulos son flexibles e integrables según las necesidades del negocio.
 
-Este proyecto nace como una iniciativa personal con el objetivo de aplicar buenas prácticas de desarrollo y crear una solución que, aunque sea de origen académico o autodidacta, tenga la calidad suficiente para ser implementada en un entorno empresarial real.
-
-Actualmente, el sistema cuenta con un módulo de clientes totalmente funcional, y se encuentra en constante desarrollo para incorporar nuevas funcionalidades que amplíen su utilidad y cobertura.
+Este proyecto nace como una iniciativa personal para aplicar buenas prácticas de desarrollo, orientadas a crear una solución que, aunque de origen académico/autodidacta, tenga la calidad necesaria para su implementación en entornos reales.
 
 
 ## TECNOLOGIAS USADAS
 
-El desarrollo de Gestor Empresarial se basa en un stack tecnológico sencillo pero robusto, ideal para aplicaciones web dinámicas y escalables. Las tecnologías utilizadas son:
+## Tecnologías utilizadas
 
-PHP – Lenguaje principal del backend, usando el framework Laravel para estructurar el proyecto.
-
-Blade – Motor de plantillas de Laravel, usado para la creación de las vistas.
-
-JavaScript (JS) – Para la interacción dinámica en el frontend.
-
-CSS – Estilos personalizados para una interfaz moderna y clara.
-
-PostgreSQL – Sistema de gestión de base de datos relacional, utilizado para almacenar toda la información del sistema.
+- **PHP** – Lenguaje principal del backend, usando el framework Laravel.
+- **Blade** – Motor de plantillas de Laravel para las vistas.
+- **JavaScript** – Para la interacción dinámica en el frontend.
+- **CSS** – Estilos personalizados para una interfaz moderna.
+- **PostgreSQL** – Base de datos relacional robusta.
 
 
 ## MODULOS IMPLEMENTADOS 
 
-Módulo de Clientes
+- Módulo de Clientes
+- Módulo de Productos
+- Módulo de Categorías
+- Validación de formularios
+- Alertas visuales de éxito
 
-Módulo de Productos
-
-Módulo de Categroias
-
-Validación de formularios: Se valida el ingreso correcto de los datos.
-
-Alertas de éxito: Mensajes visuales que confirman las acciones realizadas.
 
 ## MODOLOS EN DESARROLLO
 
-PROXIMAMENTE VENTAS
+- Módulo de Ventas (próximamente)
+- Generación de reportes PDF (Funcional para modulos finalizados)
 
 
+## Funcionalidades destacadas
 
-## FUNCIONALIDADES
+- **Autenticación de usuarios (Login/Logout):**
+  - Verificación por correo electrónico.
+  - Contraseñas cifradas.
+  - Transmisión vía TLS.
+  - En proceso: Implementación de autenticación en dos pasos (2FA).
 
-Autenticación de usuarios (Login y Logout):
-Sistema de inicio y cierre de sesión, por ahora usando una autenticacion basica con verificacion de identidad por correo electronico, el enfoque tiene la siguientes caracteristicas: Contraseña cifrada, verificacion de email, autenticacion de un solo factor, trasmisión vía TLS, en el futuro se plantea mejorar a implementar 2FA(doble factor de autenticacion)
+- **Notificaciones personalizadas:**
+  - Envío de correos para verificación de cuenta.
+  - Personalización del diseño de los correos.
+  - Prevención de ataques de fuerza bruta.
 
-Ademas de limitar intentos de login para prevenir fuerza bruta
+- **CRUD de en los modulos:**
+  - Crear, leer, actualizar y eliminar registrosd.
+  - Validación de campos y alertas animadas.
 
-CRUD de Clientes:
-Permite crear, visualizar, actualizar y eliminar registros de clientes.
-Incluye validación de formularios y alertas automáticas de confirmación.
+- **Sidebar dinámico:**
+  - Menú lateral colapsable.
+  - Enlace activo resaltado automáticamente.
 
-Sidebar dinámico:
-Menú lateral colapsable que permite navegar entre módulos. Resalta la sección activa y se adapta según la vista actual.
-
-Generación de reportes (en desarrollo):
-Se implementará próximamente la funcionalidad para generar reportes en PDF de los datos almacenados, empezando por los clientes.
-
-
-## DETALLES TECNICOS
-
-Sidebar dinámico con estados activos:
-El sistema cuenta con una barra lateral que adapta su estado según la ruta actual, mostrando los submenús desplegados automáticamente y resaltando el enlace activo.
-
-Alertas animadas de éxito:
-Las operaciones exitosas como crear, editar o eliminar muestran alertas temporales con transiciones suaves, mejorando la experiencia del usuario.
-
-Autenticacion de un solo factor(1FA) (Por ahora)
-Agregamos esta capa de confianza adiconal, ademas de las contraseñas encriptadas, asegurando que el email ingresado realmente pertenece al usuario. Empleamos Mailtrap para pruebas via TLS
-
-## CONTROLADORES
-
-ClienteController (TERMINADO)
-
-ProductoController (TERMINADO)
-
-CategoriaController (TERMINADO)
-
-CONTROLADORES AUTH (PARA AUTENTICACION-- EN PROCESO)
-
-## ARCHIVOS DEL PROYECTO
-
-resources/views/components/sidebar.blade.php
-Componente Blade que contiene la lógica y estructura del menú lateral dinámico.
-
-public/js/sidebar.js
-Script que gestiona el comportamiento de apertura y cierre del sidebar.
-
-resources/views/layouts/app.blade.php
-Plantilla principal donde se incluye el layout general y los mensajes de alerta.
-
-public/js/alerta.js
-Script que permite que las alertas de éxito desaparezcan con transición.
-
-routes/web.php
-Archivo donde se definen las rutas web del sistema.
-
-app/Http/Controllers/ClienteController.php
-Controlador encargado de la lógica CRUD del módulo de clientes.
+- **Generación de reportes (en desarrollo, pero funcional para modulos finalizados):**
+  - Exportación en PDF de datos por módulo.
 
 
-## AUTOR
+## Detalles técnicos
 
-KEVIN STIVEN FERNANDEZ PEINADO
+- Sidebar con detección de ruta actual.
+- Alertas temporales con animaciones suaves.
+- Autenticación por correo electrónico usando Mailtrap.
+- Contraseñas cifradas con Laravel Hash.
+
+
+## Controladores
+
+- `ClienteController` (Finalizado)
+- `ProductoController` (Finalizado)
+- `CategoriaController` (Finalizado)
+- `PdfController` (Reportes - En desarrollo, Funcional para los modulos finalizados)
+- `Auth` (En proceso)
+
+
+## Estructura de archivos relevantes
+
+**Vistas y componentes**
+- `resources/views/components/sidebar.blade.php`
+- `resources/views/layouts/app.blade.php`
+
+**Scripts**
+- `public/js/sidebar.js`
+- `public/js/alerta.js`
+
+**Controladores**
+- `app/Http/Controllers/ClienteController.php`
+- `app/Http/Controllers/ProductoController.php`
+- `app/Http/Controllers/CategoriaController.php`
+- `app/Http/Controllers/PdfController.php`
+
+**Notificaciones**
+- `app/Notifications/*`
+
+**Rutas**
+- `routes/web.php`
+
+
+## Autor
+
+Kevin Stiven Fernández Peinado  
+Desarrollador de software – Proyecto personal
+https://github.com/Kevin2004-St
