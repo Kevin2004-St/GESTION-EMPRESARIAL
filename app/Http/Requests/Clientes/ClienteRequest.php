@@ -60,7 +60,7 @@ class ClienteRequest extends FormRequest
             "email.email" => "El email debe ser válido.",
             "email.unique" => "Este correo ya está registrado.",
             "celular.min" => "El celular debe tener minimo 10 dígitos.",
-            "direccion.min" => "La dirección debe tener mínimo 3 caracteres.",
+            "direccion.min" => "La dirección debe tener mínimo 4 caracteres.",
             "fecha_nacimiento.before_or_equal" => "La fecha de nacimiento debe ser anterior a la fecha actual.",
         ];
     }

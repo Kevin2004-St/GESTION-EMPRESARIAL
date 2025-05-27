@@ -32,7 +32,7 @@ class CategoriaRequest extends FormRequest
             'nombre' => [
                 'required',
                 'min:3',
-                'max:50',
+                'max:30',
                 Rule::unique('categorias', 'nombre')->ignore($id),
             ],
 
@@ -47,8 +47,8 @@ class CategoriaRequest extends FormRequest
 
             'nombre.required' => 'El campo de nombre es obligatorio.',
             'nombre.unique' => 'El nombre de esta categoria ya existe.',
-            'nombre.min' => 'El nombre debe tener al menos 3 caracteres',
-            'nombre.max' => 'El nombre no puede superar los 50 caracteres'
+            'nombre.min' => 'El nombre debe tener al menos 3 caracteres.',
+            'nombre.max' => 'El nombre no puede superar los 30 caracteres.'
         ];
     }
 }
