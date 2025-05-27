@@ -72,7 +72,7 @@ class ProveedorController extends Controller
 
         $proveedor->update($data);
 
-        return redirect()->route('proveedor.index')->with('success', 'Registro actualizado exitosamente');
+        return redirect()->route('proveedores.index')->with('success', 'Registro actualizado exitosamente');
     }
 
 
@@ -82,7 +82,7 @@ class ProveedorController extends Controller
         $proveedor = Proveedor::findOrFail($id);
         $proveedor->delete();
 
-        return redirect()->route('proveedor.index')-> with('success', 'Registro eliminado exitosamente');
+        return redirect()->route('proveedores.index')-> with('success', 'Registro eliminado exitosamente');
     }
     
 }

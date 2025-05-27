@@ -5,8 +5,10 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\Producto\ProductoController;
+use App\Http\Controllers\Proveedor\ProveedorController;
 use App\Models\Categorias;
 use App\Models\Producto;
+use App\Models\Proveedor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,6 +76,17 @@ Route::middleware(['auth', 'verified'])->group(function(){
         Route::put('/{id}', [CategoriaController::class,'update'])->name('categorias.update');
         Route::delete('/{id}', [CategoriaController::class,'destroy'])->name('categorias.destroy');
         
+    });
+
+    //RUTAS PROVEEDORES
+    Route::prefix('proveedores')->group(function(){
+
+        Route::get('/', [ProveedorController::class, 'index'])->name('proveedores.index');
+        Route::get('/create', [ProveedorController::class, 'create'])->name('proveedores.create');
+        Route::post('/', [ProveedorController::class, 'store'])->name('proveedores.store');
+        Route::get('/{id}', [ProveedorController::class, 'edit'])->name('proveedores.edit');
+        Route::put('/{id}', [ProveedorController::class, 'update'])->name('proveedores.update'); 
+        Route::delete('/{id}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
 
     });
 
