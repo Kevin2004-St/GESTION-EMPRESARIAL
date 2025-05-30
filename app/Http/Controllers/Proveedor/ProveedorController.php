@@ -56,7 +56,7 @@ class ProveedorController extends Controller
 
         $proveedor = Proveedor::findOrFail($id);
 
-        return view('web.proveedores.index', compact('proveedor'));
+        return view('web.proveedores.edit', compact('proveedor'));
 
     }
 

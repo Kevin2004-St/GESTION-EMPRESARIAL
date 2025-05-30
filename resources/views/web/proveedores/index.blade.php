@@ -39,24 +39,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($proveedores as $proveedores)
+                    @foreach($proveedores as $proveedor)
                     <tr>
-                        <td>{{ $proveedores->nombre }}</td>
-                        <td>{{ $proveedores->email }} </td>
-                        <td>{{ $proveedores->contacto }}</td>
-                        <td>{{ $proveedores->direccion }}</td>
+                        <td>{{ $proveedor->nombre }}</td>
+                        <td>{{ $proveedor->email }} </td>
+                        <td>{{ $proveedor->contacto }}</td>
+                        <td>{{ $proveedor->direccion }}</td>
                         <td>
-                            <span class="badge {{ $proveedores->estado ? 'badge-success' : 'badge-danger' }}">
-                                {{ $proveedores->estado ? 'Activo' : 'Inactivo' }}
+                            <span class="badge {{ $proveedor->estado ? 'badge-success' : 'badge-danger' }}">
+                                {{ $proveedor->estado ? 'Activo' : 'Inactivo' }}
                             </span>
                         </td>
                         <td class="acciones">
                             <div class="action-buttons">
-                                <a href="{{ route('proveedores.edit', $proveedores->id) }}" class="iconos bg-naranja">
+                                <a href="{{ route('proveedores.edit', $proveedor->id) }}" class="iconos bg-naranja">
                                     <span class="material-symbols-outlined">upgrade</span>
                                 </a>
                                 
-                                <form action="{{ route('proveedores.destroy', $proveedores->id) }}" method="POST"  class="form">
+                                <form action="{{ route('proveedores.destroy', $proveedor->id) }}" method="POST"  class="form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="iconos btn-icono bg-rojo material-symbols-outlined">
