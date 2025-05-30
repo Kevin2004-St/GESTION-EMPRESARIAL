@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
-@endpush
+
 
 <div class="container">
     <h2 class="tittle">Categorias</h2>

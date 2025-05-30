@@ -30,7 +30,7 @@ class ProveedoresRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:30',
-                Rule::unique('proveedores', 'nombres')->ignore($id),
+                Rule::unique('proveedores', 'nombre')->ignore($id),
             ],
             'email' => [
                 'required',

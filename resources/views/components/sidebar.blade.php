@@ -34,6 +34,14 @@
            <a href="{{ route('categorias.index') }}" class="{{ Route::is('categorias.index') ? 'active' : '' }}">📋 Ver categorias</a>
            <a href="{{ route('categorias.create') }}" class="{{ Route::is('categorias.create') ? 'active' : '' }}">➕ Nueva categoria</a>
         </div>
+     <!--Modulo Categorias -->
+     <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'categorias.' ) ? 'active' : '' }}">
+        📂 Proveedores
+     </button>
+        <div class="accordion-content {{ Route::is('proveedores.*') ? 'open' : '' }}">
+           <a href="{{ route('proveedores.index') }}" class="{{ Route::is('proveedores.index') ? 'active' : '' }}">📋 Ver proveedores</a>
+           <a href="{{ route('proveedores.create') }}" class="{{ Route::is('proveedores.create') ? 'active' : '' }}">➕ Nuevo proveedor</a>
+        </div>
     
 
 
