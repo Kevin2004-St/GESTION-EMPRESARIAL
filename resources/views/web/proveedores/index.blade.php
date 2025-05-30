@@ -13,7 +13,7 @@
         
         <button type="submit" class="btn">Buscar</button>
 
-        <a href="{{ route('clientes.pdf') }}" target="_blank" class="btn-consolidado">
+        <a href="{{ route('proveedores.pdf') }}" target="_blank" class="btn-consolidado">
             Ver reporte de proveedores
         </a>
 

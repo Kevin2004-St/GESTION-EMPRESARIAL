@@ -38,6 +38,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
         Route::get('/clientes/pdf', [PdfController::class, 'clientes'])->name('clientes.pdf');
         Route::get('/productos/pdf', [PdfController::class, 'productos'])->name('productos.pdf');
+        Route::get('/categorias/pdf', [PdfController::class, 'categorias'])->name('categorias.pdf');
+        Route::get('/proveedores/pdf', [PdfController::class, 'proveedores'])->name('proveedores.pdf');
+
+
 
 
 

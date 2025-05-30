@@ -35,7 +35,7 @@
            <a href="{{ route('categorias.create') }}" class="{{ Route::is('categorias.create') ? 'active' : '' }}">➕ Nueva categoria</a>
         </div>
      <!--Modulo Categorias -->
-     <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'categorias.' ) ? 'active' : '' }}">
+     <button class="accordion-toggle toggle {{ Str::startsWith(Route::currentRouteName(), 'proveedores.' ) ? 'active' : '' }}">
         📂 Proveedores
      </button>
         <div class="accordion-content {{ Route::is('proveedores.*') ? 'open' : '' }}">
