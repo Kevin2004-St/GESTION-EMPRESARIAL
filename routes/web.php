@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Categoria\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Index\IndexController;
@@ -33,6 +34,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
     //RUTA DE BIENVENIDA
     Route::get('/home', [IndexController::class, 'home'])->name('home');
 
+    Route::get('/verify-otp',[OtpController::class, 'showVerifyForm'])->name('otp-verify.form');
+    Route::post('/verify-otp',[OtpController::class, 'verify' ])->name('otp.verify');
+
+    
     //RUTAS PDF
     Route::prefix('pdf')->group(function(){
 
@@ -40,10 +45,6 @@ Route::middleware(['auth', 'verified'])->group(function(){
         Route::get('/productos/pdf', [PdfController::class, 'productos'])->name('productos.pdf');
         Route::get('/categorias/pdf', [PdfController::class, 'categorias'])->name('categorias.pdf');
         Route::get('/proveedores/pdf', [PdfController::class, 'proveedores'])->name('proveedores.pdf');
-
-
-
-
 
     });
 
