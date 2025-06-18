@@ -77,6 +77,7 @@ Este proyecto nace como una iniciativa personal para aplicar buenas prácticas d
 - Módulo de Clientes
 - Módulo de Productos
 - Módulo de Categorías
+- Módulo de proveedores
 - Validación de formularios
 - Alertas visuales de éxito
 
@@ -93,10 +94,11 @@ Este proyecto nace como una iniciativa personal para aplicar buenas prácticas d
   - Verificación por correo electrónico.
   - Contraseñas cifradas.
   - Transmisión vía TLS.
-  - En proceso: Implementación de autenticación en dos pasos (2FA).
+  - Implementación de autenticación en dos pasos (2FA).
 
 - **Notificaciones personalizadas:**
   - Envío de correos para verificación de cuenta.
+  - Envío de correos para OTP de autenticación
   - Personalización del diseño de los correos.
   - Prevención de ataques de fuerza bruta.
 
@@ -125,6 +127,7 @@ Este proyecto nace como una iniciativa personal para aplicar buenas prácticas d
 - `ClienteController` (Finalizado)
 - `ProductoController` (Finalizado)
 - `CategoriaController` (Finalizado)
+-  `ProveedoresController` (Finalizado)
 - `PdfController` (Reportes - En desarrollo, Funcional para los modulos finalizados)
 - `Auth` (En proceso)
 
@@ -144,6 +147,7 @@ Este proyecto nace como una iniciativa personal para aplicar buenas prácticas d
 - `app/Http/Controllers/ProductoController.php`
 - `app/Http/Controllers/CategoriaController.php`
 - `app/Http/Controllers/PdfController.php`
+- `app/Http/Controllers/Auth/OtpController`
 
 **Notificaciones**
 - `app/Notifications/*`
